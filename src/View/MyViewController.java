@@ -14,11 +14,19 @@ public class MyViewController implements IView {
     @Override
     public void displayMaze(int[][] maze) {
         this.maze = maze;
+        mazeDisplayer.setMaze(maze);
+
+        int characterPositionRow = viewModel.getCharacterPositionRow();
+        int characterPositionColumn = viewModel.getCharacterPositionColumn();
+        mazeDisplayer.setCharacterPosition(characterPositionRow, characterPositionColumn);
+        this.characterPositionRow.set(characterPositionRow + "");
+        this.characterPositionColumn.set(characterPositionColumn + "");
     }
 
     public void draw(){
         
     }
+
 
 
 }
