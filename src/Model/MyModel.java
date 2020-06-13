@@ -1,5 +1,6 @@
 package Model;
 
+import Server.Server;
 import javafx.scene.input.KeyCode;
 
 import java.util.Observable;
@@ -11,6 +12,8 @@ public class MyModel extends Observable implements IModel {
     private int characterPositionRow;
     private int characterPositionCol;
     private ExecutorService threadPool = Executors.newCachedThreadPool();
+    private Server serverSolution;
+
 
     //Lielle: constructor?
     public MyModel(){
@@ -24,14 +27,16 @@ public class MyModel extends Observable implements IModel {
 
     @Override
     public void moveCharacter(KeyCode movement) {
-        int player_row =
 
-        switch (movement){
-            //case UP:
-            //case DOWN:
-            //case RIGHT:
-            //case LEFT:
-        }
+
+//        int player_row =
+//
+//        switch (movement){
+//            //case UP:
+//            //case DOWN:
+//            //case RIGHT:
+//            //case LEFT:
+//        }
     }
 
     @Override
@@ -48,4 +53,5 @@ public class MyModel extends Observable implements IModel {
     public int getCharacterPositionCol() {
         return characterPositionCol;
     }
+
 }
