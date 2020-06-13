@@ -89,6 +89,7 @@ public class MyModel extends Observable implements IModel {
         return maze.isLegalPosition(new Position(row, col)) && !maze.isWall(new Position(row, col));
     }
 
+
     //SOLVING MAZE:
     public void solveMaze(Maze maze){
         startServers();
@@ -187,6 +188,7 @@ public class MyModel extends Observable implements IModel {
     public int getCharacterPositionCol() {
         return playerCol;
     }
+
 
 
 
