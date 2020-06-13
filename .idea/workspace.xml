@@ -3,9 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP - Project - Part C/Model/MyModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP - Project - Part C/Model/MyModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP - Project - Part C/View/MyView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP - Project - Part C/View/MyView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP - Project - Part C/View/MyViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP - Project - Part C/View/MyViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP - Project - Part C/ViewModel/MyViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP - Project - Part C/ViewModel/MyViewModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/MyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MyModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MyView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MyView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MyViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MyViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/mazeDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/mazeDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/mazeDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MazeDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ViewModel/MyViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewModel/MyViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +206,8 @@
       <workItem from="1591895340068" duration="41000" />
       <workItem from="1592040307770" duration="593000" />
       <workItem from="1592041668235" duration="1518000" />
-      <workItem from="1592056231963" duration="8473000" />
+      <workItem from="1592056231963" duration="17534000" />
+      <workItem from="1592075082126" duration="858000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1592042475244</created>
@@ -222,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592062408002</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="start">
+      <created>1592064970674</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592064970674</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,39 +250,43 @@
     <option name="LAST_COMMIT_MESSAGE" value="start" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="544" y="95" key="#com.intellij.ide.util.MemberChooser" timestamp="1592042838653">
+    <state x="544" y="95" key="#com.intellij.ide.util.MemberChooser" timestamp="1592074076753">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="544" y="95" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592042838653" />
+    <state x="544" y="95" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592074076753" />
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591890676829" />
     <state x="218" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591886560626">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="218" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591886560626" />
-    <state x="621" y="0" key="CommitChangelistDialog2" timestamp="1592062406460">
+    <state x="621" y="0" key="CommitChangelistDialog2" timestamp="1592064969681">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="621" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592062406460" />
+    <state x="621" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592064969681" />
     <state x="627" y="130" key="FileChooserDialogImpl" timestamp="1592064693069">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="627" y="130" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592064693069" />
     <state x="881" y="270" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591895376700" />
-    <state width="914" height="278" key="GridCell.Tab.0.bottom" timestamp="1591891356375">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1592075940458">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592075940458" />
     <state width="914" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591891356375" />
-    <state width="914" height="278" key="GridCell.Tab.0.center" timestamp="1591891356375">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1592075940458">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592075940458" />
     <state width="914" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591891356375" />
-    <state width="914" height="278" key="GridCell.Tab.0.left" timestamp="1591891356375">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1592075940458">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592075940458" />
     <state width="914" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591891356375" />
-    <state width="914" height="278" key="GridCell.Tab.0.right" timestamp="1591891356375">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1592075940458">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592075940458" />
     <state width="914" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591891356375" />
     <state x="348" y="68" key="NewModule_or_Project.wizard" timestamp="1592064707527">
       <screen x="0" y="0" width="1366" height="728" />
@@ -278,10 +297,10 @@
     </state>
     <state x="326" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592056769573" />
     <state x="693" y="101" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591895378245" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1592062411530">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1592064974747">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592062411530" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592064974747" />
     <state x="65" y="0" key="new project wizard" timestamp="1592064651987">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -292,7 +311,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Model/MyModel.java</url>
-          <line>124</line>
+          <line>149</line>
           <properties class="Model.MyModel" method="moveCharacter">
             <option name="EMULATED" value="true" />
           </properties>

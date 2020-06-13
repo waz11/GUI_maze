@@ -43,6 +43,21 @@ public class MyModel extends Observable implements IModel {
     }
 
     // GENERATE MAZE:
+
+    public void generateThread(int rows, int cols){
+        threadPool.execute(() -> {
+            generateMaze(rows, cols);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+            }
+            setChanged();
+            notifyObservers();
+        });
+
+    }
+
+
     @Override
     public void generateMaze(int rows, int cols) {
         //Generate maze
@@ -82,12 +97,22 @@ public class MyModel extends Observable implements IModel {
     // LIELlE@gmail.com YOU HAVE TO COMPLETE THIS BY YOURSELF!
     @Override
     public int[][] getMaze() {
-        return new int[0][0];
+        int[][] m = new int[maze.getRows()][maze.getCols()];
+        for(int row=0;row<maze.getCols();row++){
+            for(int col=0;col<maze.getCols();col++){
+                if(maze.isWall(new Position(row,col)))
+                    m[row][col] = 1;
+                else
+                    m[row][col] = 0;
+            }
+        }
+        return m;
     }
 
     public boolean isLegal(int row, int col){
         return maze.isLegalPosition(new Position(row, col)) && !maze.isWall(new Position(row, col));
     }
+
 
 
     //SOLVING MAZE:
