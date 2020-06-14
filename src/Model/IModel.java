@@ -14,8 +14,6 @@ public interface IModel {
     Maze getMaze();
     int getPlayer_row();
     int getPlayer_col();
-    int getGoal_row();
-    int getGoal_col();
     boolean isGameOver();
     Solution getSolution();
 

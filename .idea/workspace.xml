@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="img">
+      <change afterPath="$PROJECT_DIR$/resources/Images/border.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP2017 - Lab11 - MVVM/View/MazeDisplayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP2017 - Lab11 - MVVM/View/MazeDisplayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP2017 - Lab11 - MVVM/View/View$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP2017 - Lab11 - MVVM/View/View$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP2017 - Lab11 - MVVM/View/View$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP2017 - Lab11 - MVVM/View/View$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP2017 - Lab11 - MVVM/View/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP2017 - Lab11 - MVVM/View/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ATP2017 - Lab11 - MVVM/View/View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ATP2017 - Lab11 - MVVM/View/View.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/IModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/IModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/About.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/About.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MazeDisplayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MazeDisplayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/View.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/View.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/View.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ViewModel/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ViewModel/ViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,13 +114,13 @@
     <property name="dynamic.classpath" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ATP2019 - Lab11 - MVVM" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.09165901" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -324,6 +332,11 @@
       <workItem from="1592139599764" duration="306000" />
       <workItem from="1592140031918" duration="10464000" />
       <workItem from="1592162785897" duration="1598000" />
+      <workItem from="1592167572538" duration="94000" />
+      <workItem from="1592167806098" duration="2596000" />
+      <workItem from="1592170459059" duration="126000" />
+      <workItem from="1592170657841" duration="2761000" />
+      <workItem from="1592173454378" duration="3892000" />
     </task>
     <task id="LOCAL-00001" summary="img">
       <created>1592140941715</created>
@@ -376,6 +389,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1592149924863" />
+    <state x="430" y="185" key="#com.intellij.tools.ToolEditorDialog" timestamp="1592176431569">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="430" y="185" key="#com.intellij.tools.ToolEditorDialog/0.0.1366.728@0.0.1366.728" timestamp="1592176431569" />
     <state x="303" y="0" key="CommitChangelistDialog2" timestamp="1592149752297">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -384,30 +401,50 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="389" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592138869881" />
-    <state width="1323" height="90" key="GridCell.Tab.0.bottom" timestamp="1592163873312">
+    <state width="1323" height="147" key="GridCell.Tab.0.bottom" timestamp="1592177101166">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="90" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592163873312" />
-    <state width="1323" height="90" key="GridCell.Tab.0.center" timestamp="1592163873312">
+    <state width="1323" height="147" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592177101166" />
+    <state width="1323" height="147" key="GridCell.Tab.0.center" timestamp="1592177101166">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="90" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592163873312" />
-    <state width="1323" height="90" key="GridCell.Tab.0.left" timestamp="1592163873311">
+    <state width="1323" height="147" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592177101166" />
+    <state width="1323" height="147" key="GridCell.Tab.0.left" timestamp="1592177101166">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="90" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592163873311" />
-    <state width="1323" height="90" key="GridCell.Tab.0.right" timestamp="1592163873312">
+    <state width="1323" height="147" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592177101166" />
+    <state width="1323" height="147" key="GridCell.Tab.0.right" timestamp="1592177101166">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="90" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592163873312" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1592141883880">
+    <state width="1323" height="147" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592177101166" />
+    <state width="1323" height="226" key="GridCell.Tab.1.bottom" timestamp="1592170423936">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592141883880" />
+    <state width="1323" height="226" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592170423936" />
+    <state width="1323" height="226" key="GridCell.Tab.1.center" timestamp="1592170423936">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="226" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1592170423936" />
+    <state width="1323" height="226" key="GridCell.Tab.1.left" timestamp="1592170423936">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="226" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1592170423936" />
+    <state width="1323" height="226" key="GridCell.Tab.1.right" timestamp="1592170423936">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="226" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1592170423936" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1592176433899">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592176433899" />
     <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1592149759669">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592149759669" />
+    <state x="389" y="97" width="587" height="534" key="find.popup" timestamp="1592168124641">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="389" y="97" width="587" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1592168124641" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1592163708894">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -422,23 +459,8 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/View/View.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/View/View.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/View/View.java</url>
-          <line>88</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Model/Model.java</url>
-          <line>54</line>
+          <line>49</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>

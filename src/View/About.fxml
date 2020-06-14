@@ -6,6 +6,6 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label text="Bla Bla Bla..." />
+      <Label text="this project created by Lielle and Ron - Rocket Team" />
    </children>
 </AnchorPane>

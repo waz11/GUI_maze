@@ -20,20 +20,15 @@ import java.util.concurrent.Executors;
 
 
 public class Model extends Observable implements IModel {
-
     private ExecutorService threadPool = Executors.newCachedThreadPool();
-
     private int player_row = 0;
     private int player_col = 0;
-
     private int goal_row = 0;
     private int goal_col = 1;
 
     private Server severGenerate;
     private Server serverSolve;
-
     private boolean isGameOver=false;
-
     private Maze maze;
 
     public Model() {
@@ -54,7 +49,6 @@ public class Model extends Observable implements IModel {
 
     @Override
     public void generateMaze(int rows, int cols) {
-        //Generate maze
         threadPool.execute(() -> {
             getMazeFromServer(rows, cols);
             try {
@@ -235,8 +229,6 @@ public class Model extends Observable implements IModel {
         return maze.isLegalPosition(new Position(row, col)) && maze.isPath(new Position(row, col));
     }
 
-
-
     public int getGoal_row() {
         return goal_row;
     }
@@ -252,6 +244,5 @@ public class Model extends Observable implements IModel {
     public void setGoal_col(int goal_col) {
         this.goal_col = goal_col;
     }
-
 
 }

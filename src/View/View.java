@@ -37,13 +37,8 @@ public class View implements Observer, IView {
 
     public void setViewModel(ViewModel viewModel) {
         this.viewModel = viewModel;
-        bindProperties(viewModel);
     }
 
-    private void bindProperties(ViewModel viewModel) {
-        lbl_rowsNum.textProperty().bind(viewModel.characterPositionRow);
-        lbl_columnsNum.textProperty().bind(viewModel.characterPositionColumn);
-    }
 
     @Override
     public void update(Observable o, Object arg) {
@@ -62,7 +57,7 @@ public class View implements Observer, IView {
     public void displayMaze(Maze maze) {
         if (isGameOver) {
             Alert alert_gameOver = new Alert(Alert.AlertType.INFORMATION);
-            alert_gameOver.setContentText(String.format("Fuckoff"));
+            alert_gameOver.setContentText(String.format("Great! Game Completed!"));
             alert_gameOver.show();
         }
         mazeDisplayer.setMaze(maze);
@@ -103,23 +98,13 @@ public class View implements Observer, IView {
 
     //region String Property for Binding
     public StringProperty characterPositionRow = new SimpleStringProperty();
-
     public StringProperty characterPositionColumn = new SimpleStringProperty();
 
     public String getCharacterPositionRow() {
         return characterPositionRow.get();
     }
-
-    public StringProperty characterPositionRowProperty() {
-        return characterPositionRow;
-    }
-
     public String getCharacterPositionColumn() {
         return characterPositionColumn.get();
-    }
-
-    public StringProperty characterPositionColumnProperty() {
-        return characterPositionColumn;
     }
 
     public void setResizeEvent(Scene scene) {
@@ -142,7 +127,7 @@ public class View implements Observer, IView {
     public void About(ActionEvent actionEvent) {
         try {
             Stage stage = new Stage();
-            stage.setTitle("AboutController");
+            stage.setTitle("About");
             FXMLLoader fxmlLoader = new FXMLLoader();
             Parent root = fxmlLoader.load(getClass().getResource("About.fxml").openStream());
             Scene scene = new Scene(root, 400, 350);
@@ -157,7 +142,5 @@ public class View implements Observer, IView {
     public void mouseClicked(MouseEvent mouseEvent) {
         this.mazeDisplayer.requestFocus();
     }
-
-    //endregion
 
 }
