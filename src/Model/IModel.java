@@ -1,6 +1,7 @@
 package Model;
 
 import algorithms.mazeGenerators.Maze;
+import algorithms.search.Solution;
 import javafx.scene.input.KeyCode;
 
 /**
@@ -16,5 +17,6 @@ public interface IModel {
     int getGoal_row();
     int getGoal_col();
     boolean isGameOver();
+    Solution getSolution();
 
 }

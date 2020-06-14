@@ -7,6 +7,8 @@ import algorithms.mazeGenerators.EmptyMazeGenerator;
 import algorithms.mazeGenerators.IMazeGenerator;
 import algorithms.mazeGenerators.Maze;
 import algorithms.mazeGenerators.Position;
+import algorithms.search.AState;
+import algorithms.search.Solution;
 import javafx.scene.input.KeyCode;
 
 import java.io.*;
@@ -49,8 +51,6 @@ public class Model extends Observable implements IModel {
         serverSolve.stop();
     }
 
-//    private int rows = maze.length;
-//    private int cols = maze[0].length;
 
     @Override
     public void generateMaze(int rows, int cols) {
@@ -106,7 +106,6 @@ public class Model extends Observable implements IModel {
     }
 
     public void solveMaze() {
-        //Generate maze
         threadPool.execute(() -> {
             solveMazeServer();
             try {
@@ -115,15 +114,40 @@ public class Model extends Observable implements IModel {
                 e.printStackTrace();
             }
             setChanged();
-            notifyObservers();
+            notifyObservers("solution");
         });
     }
 
+    public Solution solution;
     public void solveMazeServer(){
+        try {
+            Client client = new Client(InetAddress.getLocalHost(), 5401, new IClientStrategy() {
+                @Override
+                public void clientStrategy(InputStream inFromServer, OutputStream outToServer) {
+                    try {
+                        ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
+                        ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
+                        toServer.flush();
 
+                        toServer.writeObject(maze); //send maze to server
+                        toServer.flush();
+                        solution= (Solution) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
 
-
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            client.communicateWithServer();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
     }
+
+    public Solution getSolution(){
+        return solution;
+    }
+
 
     @Override
     public Maze getMaze() {

@@ -2,6 +2,8 @@ package View;
 
 import algorithms.mazeGenerators.Maze;
 import algorithms.mazeGenerators.Position;
+import algorithms.search.MazeState;
+import algorithms.search.Solution;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.canvas.Canvas;
@@ -49,12 +51,43 @@ public class MazeDisplayer extends Canvas {
         }
     }
 
+    public void showSolution(Solution solution){
+        if (maze != null) {
+            double canvasHeight = getHeight();
+            double canvasWidth = getWidth();
+            double y = canvasHeight / maze.getRows();
+            double x = canvasWidth / maze.getCols();
+
+            try {
+                Image solutionImg = new Image(new FileInputStream(imageFileNameSolution.get()));
+
+                GraphicsContext gc = getGraphicsContext2D();
+                gc.clearRect(0, 0, getWidth(), getHeight());
+                int rows = maze.getRows();
+                int cols = maze.getCols();
+
+                for (int i=0; i<solution.getSolutionPath().size(); i++){
+                    MazeState position = (MazeState)solution.getSolutionPath().get(i);
+                    gc.drawImage(solutionImg, position.getState().getColumnIndex() * x, position.getState().getRowIndex() * y, x, y);
+
+                }
+
+            } catch (FileNotFoundException e) {
+                //e.printStackTrace();
+            }
+        }
+    }
+
+
+
     // Maze:
     private Maze maze;
     public void setMaze(Maze maze) {
         this.maze = maze;
         redraw();
     }
+
+
 
     // Wall
     private StringProperty ImageFileNameWall = new SimpleStringProperty();

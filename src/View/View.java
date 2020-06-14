@@ -32,7 +32,7 @@ public class View implements Observer, IView {
     public javafx.scene.control.Button btn_generateMaze;
     public javafx.scene.control.Button btn_solveMaze;
     public boolean isGameOver = false;
-
+    public boolean haveMaze = false;
 
 
     public void setViewModel(ViewModel viewModel) {
@@ -49,14 +49,18 @@ public class View implements Observer, IView {
     public void update(Observable o, Object arg) {
         if (o == viewModel) {
             isGameOver = viewModel.isGameOver();
-            displayMaze(viewModel.getMaze());
+            if (arg != null && arg == "solution") {
+                mazeDisplayer.showSolution(viewModel.getSolution());
+            } else {
+                displayMaze(viewModel.getMaze());
+            }
             btn_generateMaze.setDisable(false);
         }
     }
 
     @Override
     public void displayMaze(Maze maze) {
-        if (isGameOver){
+        if (isGameOver) {
             Alert alert_gameOver = new Alert(Alert.AlertType.INFORMATION);
             alert_gameOver.setContentText(String.format("Fuckoff"));
             alert_gameOver.show();
@@ -71,6 +75,7 @@ public class View implements Observer, IView {
     }
 
     public void generateMaze() {
+        haveMaze = true;
         int rows = Integer.valueOf(txtfld_rowsNum.getText());
         int cols = Integer.valueOf(txtfld_columnsNum.getText());
 
@@ -90,8 +95,10 @@ public class View implements Observer, IView {
     }
 
     public void KeyPressed(KeyEvent keyEvent) {
+        if(haveMaze) {
             viewModel.moveCharacter(keyEvent.getCode());
             keyEvent.consume();
+        }
     }
 
     //region String Property for Binding
