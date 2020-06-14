@@ -21,11 +21,16 @@ public class Model extends Observable implements IModel {
 
     private ExecutorService threadPool = Executors.newCachedThreadPool();
 
-    private int player_row = 1;
-    private int player_col = 1;
+    private int player_row = 0;
+    private int player_col = 0;
+
+    private int goal_row = 0;
+    private int goal_col = 1;
 
     private Server severGenerate;
     private Server serverSolve;
+
+    private boolean isGameOver=false;
 
     private Maze maze;
 
@@ -81,6 +86,13 @@ public class Model extends Observable implements IModel {
                         byte[] decompressedMaze = new byte[rows*cols+12 /*CHANGE SIZE ACCORDING TO YOU MAZE SIZE*/]; //allocating byte[] for the decompressed maze -
                         is.read(decompressedMaze); //Fill decompressedMaze with bytes
                         maze = new Maze(decompressedMaze);
+                        player_row = maze.getStartPosition().getRowIndex();
+                        player_col = maze.getStartPosition().getColumnIndex();
+
+                        goal_row = maze.getGoalPosition().getRowIndex();
+                        goal_col = maze.getGoalPosition().getColumnIndex();
+                        isGameOver = false;
+
                         toServer.close();
                         fromServer.close();
                     } catch (Exception e) {
@@ -95,76 +107,77 @@ public class Model extends Observable implements IModel {
 
 
 
+
+
     @Override
-    public int[][] getMaze() {
-        int[][] m = new int[maze.getRows()][maze.getCols()];
-        for(int row=0;row<maze.getRows();row++){
-            for(int col=0;col<maze.getCols();col++){
-                if(maze.isWall(new Position(row,col)))
-                    m[row][col] = 1;
-                else
-                    m[row][col] = 0;
-            }
-        }
-        return m;
+    public Maze getMaze() {
+        return maze;
+    }
+
+    public boolean isGameOver() {
+        return isGameOver;
     }
 
     @Override
     public void moveCharacter(KeyCode movement) {
-//        int rows = maze.length;
-//        int cols = maze[0].length;
-        int rows = maze.getRows();
-        int cols = maze.getCols();
-        int row= player_row;
-        int col= player_col;
-        switch (movement) {
-            case UP:
-            case NUMPAD8:
-                if (isLegal(player_row - 1, player_col))
-                    player_row--;
-                break;
-            case DOWN:
-            case NUMPAD2:
-                if (isLegal(player_row + 1, player_col))
-                    player_row++;
-                break;
-            case RIGHT:
-            case NUMPAD6:
-                if (isLegal(player_row, player_col + 1))
-                    player_col++;
-                break;
-            case LEFT:
-            case NUMPAD4:
-                if (isLegal(player_row, player_col - 1))
-                    player_col--;
-                break;
-            case NUMPAD1:
-                if (isLegal(player_row + 1, player_col - 1)) {
-                    player_row++;
-                    player_col--;
-                }
-                break;
-            case NUMPAD3:
-                if (isLegal(player_row + 1, player_col + 1)) {
-                    player_row++;
-                    player_col++;
-                }
-                break;
-            case NUMPAD7:
-                if (isLegal(player_row - 1, player_col - 1)) {
-                    player_row--;
-                    player_col--;
-                }
-                break;
-            case NUMPAD9:
-                if (isLegal(player_row - 1, player_col + 1)) {
-                    player_row--;
-                    player_col++;
-                }
-                break;
+        if(!isGameOver) {
+            int rows = maze.getRows();
+            int cols = maze.getCols();
+            int row = player_row;
+            int col = player_col;
+            switch (movement) {
+                case UP:
+                case NUMPAD8:
+                    if (isLegal(player_row - 1, player_col))
+                        player_row--;
+                    break;
+                case DOWN:
+                case NUMPAD2:
+                    if (isLegal(player_row + 1, player_col))
+                        player_row++;
+                    break;
+                case RIGHT:
+                case NUMPAD6:
+                    if (isLegal(player_row, player_col + 1))
+                        player_col++;
+                    break;
+                case LEFT:
+                case NUMPAD4:
+                    if (isLegal(player_row, player_col - 1))
+                        player_col--;
+                    break;
+                case NUMPAD1:
+                    if (isLegal(player_row + 1, player_col - 1)) {
+                        player_row++;
+                        player_col--;
+                    }
+                    break;
+                case NUMPAD3:
+                    if (isLegal(player_row + 1, player_col + 1)) {
+                        player_row++;
+                        player_col++;
+                    }
+                    break;
+                case NUMPAD7:
+                    if (isLegal(player_row - 1, player_col - 1)) {
+                        player_row--;
+                        player_col--;
+                    }
+                    break;
+                case NUMPAD9:
+                    if (isLegal(player_row - 1, player_col + 1)) {
+                        player_row--;
+                        player_col++;
+                    }
+                    break;
+            }
+
+
+            if (player_row == maze.getGoalPosition().getRowIndex() && player_col == maze.getGoalPosition().getColumnIndex())
+                isGameOver = true;
+            setChanged();
+            notifyObservers();
         }
-        setChanged();
-        notifyObservers();
     }
 
     @Override
@@ -182,6 +195,23 @@ public class Model extends Observable implements IModel {
         return maze.isLegalPosition(new Position(row, col)) && maze.isPath(new Position(row, col));
     }
 
+
+
+    public int getGoal_row() {
+        return goal_row;
+    }
+
+    public void setGoal_row(int goal_row) {
+        this.goal_row = goal_row;
+    }
+
+    public int getGoal_col() {
+        return goal_col;
+    }
+
+    public void setGoal_col(int goal_col) {
+        this.goal_col = goal_col;
+    }
 
 
 }

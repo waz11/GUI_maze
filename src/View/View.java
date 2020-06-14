@@ -1,6 +1,7 @@
 package View;
 
 import ViewModel.ViewModel;
+import algorithms.mazeGenerators.Maze;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
@@ -29,6 +30,9 @@ public class View implements Observer, IView {
     public javafx.scene.control.Label lbl_rowsNum;
     public javafx.scene.control.Label lbl_columnsNum;
     public javafx.scene.control.Button btn_generateMaze;
+    public boolean isGameOver = false;
+
+
 
     public void setViewModel(ViewModel viewModel) {
         this.viewModel = viewModel;
@@ -43,19 +47,26 @@ public class View implements Observer, IView {
     @Override
     public void update(Observable o, Object arg) {
         if (o == viewModel) {
+            isGameOver = viewModel.isGameOver();
             displayMaze(viewModel.getMaze());
             btn_generateMaze.setDisable(false);
         }
     }
 
     @Override
-    public void displayMaze(int[][] maze) {
+    public void displayMaze(Maze maze) {
+        if (isGameOver){
+            Alert alert_gameOver = new Alert(Alert.AlertType.INFORMATION);
+            alert_gameOver.setContentText(String.format("Fuckoff"));
+            alert_gameOver.show();
+        }
         mazeDisplayer.setMaze(maze);
         int characterPositionRow = viewModel.getCharacterPositionRow();
         int characterPositionColumn = viewModel.getCharacterPositionColumn();
         mazeDisplayer.setCharacterPosition(characterPositionRow, characterPositionColumn);
         this.characterPositionRow.set(characterPositionRow + "");
         this.characterPositionColumn.set(characterPositionColumn + "");
+
     }
 
     public void generateMaze() {
@@ -63,6 +74,7 @@ public class View implements Observer, IView {
         int cols = Integer.valueOf(txtfld_columnsNum.getText());
 
         btn_generateMaze.setDisable(true);
+        isGameOver = false;
         viewModel.generateMaze(rows, cols);
     }
 
@@ -77,8 +89,8 @@ public class View implements Observer, IView {
     }
 
     public void KeyPressed(KeyEvent keyEvent) {
-        viewModel.moveCharacter(keyEvent.getCode());
-        keyEvent.consume();
+            viewModel.moveCharacter(keyEvent.getCode());
+            keyEvent.consume();
     }
 
     //region String Property for Binding

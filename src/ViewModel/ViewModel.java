@@ -1,6 +1,7 @@
 package ViewModel;
 
 import Model.IModel;
+import algorithms.mazeGenerators.Maze;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.input.KeyCode;
@@ -21,17 +22,24 @@ public class ViewModel extends Observable implements Observer {
     public StringProperty characterPositionRow = new SimpleStringProperty("1"); //For Binding
     public StringProperty characterPositionColumn = new SimpleStringProperty("1"); //For Binding
 
+    private boolean isGameOver = false;
+
     public ViewModel(IModel model){
         this.model = model;
+    }
+
+    public boolean isGameOver() {
+        return isGameOver;
     }
 
     @Override
     public void update(Observable o, Object arg) {
         if (o==model){
             characterPositionRowIndex = model.getPlayer_row();
-            characterPositionRow.set(characterPositionRowIndex + "");
+            //characterPositionRow.set(characterPositionRowIndex + "");
             characterPositionColumnIndex = model.getPlayer_col();
-            characterPositionColumn.set(characterPositionColumnIndex + "");
+            //characterPositionColumn.set(characterPositionColumnIndex + "");
+            isGameOver = model.isGameOver();
             setChanged();
             notifyObservers();
         }
@@ -39,13 +47,14 @@ public class ViewModel extends Observable implements Observer {
 
     public void generateMaze(int width, int height){
         model.generateMaze(width, height);
+        isGameOver = false;
     }
 
     public void moveCharacter(KeyCode movement){
         model.moveCharacter(movement);
     }
 
-    public int[][] getMaze() {
+    public Maze getMaze() {
         return model.getMaze();
     }
 
@@ -56,4 +65,5 @@ public class ViewModel extends Observable implements Observer {
     public int getCharacterPositionColumn() {
         return characterPositionColumnIndex;
     }
+
 }

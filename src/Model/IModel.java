@@ -1,5 +1,6 @@
 package Model;
 
+import algorithms.mazeGenerators.Maze;
 import javafx.scene.input.KeyCode;
 
 /**
@@ -8,7 +9,11 @@ import javafx.scene.input.KeyCode;
 public interface IModel {
     void generateMaze(int width, int height);
     void moveCharacter(KeyCode movement);
-    int[][] getMaze();
+    Maze getMaze();
     int getPlayer_row();
     int getPlayer_col();
+    int getGoal_row();
+    int getGoal_col();
+    boolean isGameOver();
+
 }
