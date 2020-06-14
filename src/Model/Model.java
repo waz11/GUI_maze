@@ -1,13 +1,13 @@
 package Model;
 
+import Client.*;
 import IO.MyDecompressorInputStream;
 import Server.*;
+import algorithms.mazeGenerators.EmptyMazeGenerator;
+import algorithms.mazeGenerators.IMazeGenerator;
 import algorithms.mazeGenerators.Maze;
 import algorithms.mazeGenerators.Position;
-import algorithms.search.Solution;
 import javafx.scene.input.KeyCode;
-
-import Client.*;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -16,18 +16,20 @@ import java.util.Observable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class MyModel extends Observable implements IModel {
-    private Maze maze;
-    private int playerRow;
-    private int playerCol;
+
+public class Model extends Observable implements IModel {
+
     private ExecutorService threadPool = Executors.newCachedThreadPool();
+
+    private int player_row = 1;
+    private int player_col = 1;
+
     private Server severGenerate;
     private Server serverSolve;
-    private Solution solution;
 
+    private Maze maze;
 
-    //Lielle: constructor?
-    public MyModel(){
+    public Model() {
         severGenerate = new Server(5400, 1000, new ServerStrategyGenerateMaze());
         serverSolve = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
     }
@@ -42,36 +44,35 @@ public class MyModel extends Observable implements IModel {
         serverSolve.stop();
     }
 
-    // GENERATE MAZE:
-
-    public void generateThread(int rows, int cols){
-        threadPool.execute(() -> {
-            generateMaze(rows, cols);
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-            }
-            setChanged();
-            notifyObservers();
-        });
-
-    }
-
+//    private int rows = maze.length;
+//    private int cols = maze[0].length;
 
     @Override
     public void generateMaze(int rows, int cols) {
         //Generate maze
-        startServers();
+        threadPool.execute(() -> {
+            getMazeFromServer(rows, cols);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            setChanged();
+            notifyObservers();
+        });
+    }
+
+
+    private Maze getMazeFromServer(int rows, int cols) {
         try {
             Client client = new Client(InetAddress.getLocalHost(), 5400, new IClientStrategy() {
-                @Override
                 public void clientStrategy(InputStream inFromServer, OutputStream outToServer) {
                     try {
                         ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
                         ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
                         toServer.flush();
 
-                        int[] mazeDimensions = new int[]{rows, cols};
+                        int[] mazeDimensions = new int[]{rows,cols};
                         toServer.writeObject(mazeDimensions); //send maze dimensions to server
                         toServer.flush();
 
@@ -80,25 +81,24 @@ public class MyModel extends Observable implements IModel {
                         byte[] decompressedMaze = new byte[rows*cols+12 /*CHANGE SIZE ACCORDING TO YOU MAZE SIZE*/]; //allocating byte[] for the decompressed maze -
                         is.read(decompressedMaze); //Fill decompressedMaze with bytes
                         maze = new Maze(decompressedMaze);
+                        toServer.close();
+                        fromServer.close();
                     } catch (Exception e) {
-                        e.printStackTrace();
                     }
                 }
             });
             client.communicateWithServer();
         } catch (UnknownHostException e) {
-            e.printStackTrace();
         }
-
-        stopServers();
-
+        return maze;
     }
 
-    // LIELlE@gmail.com YOU HAVE TO COMPLETE THIS BY YOURSELF!
+
+
     @Override
     public int[][] getMaze() {
         int[][] m = new int[maze.getRows()][maze.getCols()];
-        for(int row=0;row<maze.getCols();row++){
+        for(int row=0;row<maze.getRows();row++){
             for(int col=0;col<maze.getCols();col++){
                 if(maze.isWall(new Position(row,col)))
                     m[row][col] = 1;
@@ -109,113 +109,78 @@ public class MyModel extends Observable implements IModel {
         return m;
     }
 
-    public boolean isLegal(int row, int col){
-        return maze.isLegalPosition(new Position(row, col)) && !maze.isWall(new Position(row, col));
-    }
-
-
-
-    //SOLVING MAZE:
-    public void solveMaze(Maze maze){
-        startServers();
-
-        try {
-            Client client = new Client(InetAddress.getLocalHost(), 5401, new IClientStrategy() {
-                @Override
-                public void clientStrategy(InputStream inFromServer, OutputStream outToServer) {
-                    try {
-                        ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
-                        ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
-                        toServer.flush();
-
-                        toServer.writeObject(maze); //send maze to server
-                        toServer.flush();
-
-                        solution = (Solution) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-            client.communicateWithServer();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
-        stopServers();
-    }
-
-    //THE PLAYER:
-
     @Override
     public void moveCharacter(KeyCode movement) {
-
+//        int rows = maze.length;
+//        int cols = maze[0].length;
+        int rows = maze.getRows();
+        int cols = maze.getCols();
+        int row= player_row;
+        int col= player_col;
         switch (movement) {
             case UP:
             case NUMPAD8:
-                if(isLegal(playerRow-1, playerCol))
-                    playerRow--;
+                if (isLegal(player_row - 1, player_col))
+                    player_row--;
                 break;
             case DOWN:
             case NUMPAD2:
-                if(isLegal(playerRow+1, playerCol))
-                    playerRow++;
+                if (isLegal(player_row + 1, player_col))
+                    player_row++;
                 break;
             case RIGHT:
             case NUMPAD6:
-                if(isLegal(playerRow, playerCol+1))
-                playerCol++;
+                if (isLegal(player_row, player_col + 1))
+                    player_col++;
                 break;
             case LEFT:
             case NUMPAD4:
-                if(isLegal(playerRow, playerCol-1))
-                playerCol--;
+                if (isLegal(player_row, player_col - 1))
+                    player_col--;
                 break;
             case NUMPAD1:
-                if(isLegal(playerRow+1, playerCol-1)) {
-                    playerRow++;
-                    playerCol--;
+                if (isLegal(player_row + 1, player_col - 1)) {
+                    player_row++;
+                    player_col--;
                 }
                 break;
             case NUMPAD3:
-                if(isLegal(playerRow+1, playerCol+1)) {
-                    playerRow++;
-                    playerCol++;
+                if (isLegal(player_row + 1, player_col + 1)) {
+                    player_row++;
+                    player_col++;
                 }
                 break;
             case NUMPAD7:
-                if(isLegal(playerRow-1, playerCol-1)) {
-                    playerRow--;
-                    playerCol--;
+                if (isLegal(player_row - 1, player_col - 1)) {
+                    player_row--;
+                    player_col--;
                 }
                 break;
             case NUMPAD9:
-                if(isLegal(playerRow-1, playerCol+1)) {
-                    playerRow--;
-                    playerCol++;
+                if (isLegal(player_row - 1, player_col + 1)) {
+                    player_row--;
+                    player_col++;
                 }
                 break;
-
-
-
         }
         setChanged();
         notifyObservers();
     }
 
-
-
     @Override
-    public int getCharacterPositionRow() {
-        return playerRow;
+    public int getPlayer_row() {
+        return player_row;
     }
 
     @Override
-    public int getCharacterPositionCol() {
-        return playerCol;
+    public int getPlayer_col() {
+        return player_col;
     }
 
-
-
+    private boolean isLegal(int row, int col) {
+        boolean ans = maze.isLegalPosition(new Position(row, col)) && maze.isPath(new Position(row, col));
+        return maze.isLegalPosition(new Position(row, col)) && maze.isPath(new Position(row, col));
+    }
 
 
 
