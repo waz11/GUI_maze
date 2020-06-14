@@ -105,9 +105,25 @@ public class Model extends Observable implements IModel {
         return maze;
     }
 
+    public void solveMaze() {
+        //Generate maze
+        threadPool.execute(() -> {
+            solveMazeServer();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            setChanged();
+            notifyObservers();
+        });
+    }
+
+    public void solveMazeServer(){
 
 
 
+    }
 
     @Override
     public Maze getMaze() {

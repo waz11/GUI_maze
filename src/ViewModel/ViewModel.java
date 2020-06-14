@@ -50,6 +50,10 @@ public class ViewModel extends Observable implements Observer {
         isGameOver = false;
     }
 
+    public void solveMaze(){
+        model.solveMaze();
+    }
+
     public void moveCharacter(KeyCode movement){
         model.moveCharacter(movement);
     }

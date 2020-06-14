@@ -74,6 +74,14 @@ public class MazeDisplayer extends Canvas {
         this.ImageFileNameGoal.set(imageFileNameGoal);
     }
 
+    // Solution
+    private StringProperty imageFileNameSolution = new SimpleStringProperty();
+    public String getImageFileNameSolution() {
+        return imageFileNameSolution.get();
+    }
+    public void setImageFileNameSolution(String imageFileNameSolution) {
+        this.imageFileNameSolution.set(imageFileNameSolution);
+    }
 
     // Player:
     private int characterPositionRow;

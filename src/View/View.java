@@ -30,6 +30,7 @@ public class View implements Observer, IView {
     public javafx.scene.control.Label lbl_rowsNum;
     public javafx.scene.control.Label lbl_columnsNum;
     public javafx.scene.control.Button btn_generateMaze;
+    public javafx.scene.control.Button btn_solveMaze;
     public boolean isGameOver = false;
 
 
@@ -79,7 +80,7 @@ public class View implements Observer, IView {
     }
 
     public void solveMaze(ActionEvent actionEvent) {
-        showAlert("Solving maze..");
+        viewModel.solveMaze();
     }
 
     private void showAlert(String alertMessage) {
