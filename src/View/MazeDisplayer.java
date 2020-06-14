@@ -59,6 +59,7 @@ public class MazeDisplayer extends Canvas {
             try {
                 Image wallImage = new Image(new FileInputStream(ImageFileNameWall.get()));
                 Image characterImage = new Image(new FileInputStream(ImageFileNameCharacter.get()));
+                Image goalImage = new Image(new FileInputStream(ImageFileNameGoal.get()));
 
                 GraphicsContext gc = getGraphicsContext2D();
                 gc.clearRect(0, 0, getWidth(), getHeight());
@@ -90,26 +91,35 @@ public class MazeDisplayer extends Canvas {
         }
     }
 
-    //region Properties
-    private StringProperty ImageFileNameWall = new SimpleStringProperty();
-    private StringProperty ImageFileNameCharacter = new SimpleStringProperty();
 
+    //img: Wall
+    private StringProperty ImageFileNameWall = new SimpleStringProperty();
     public String getImageFileNameWall() {
         return ImageFileNameWall.get();
     }
-
     public void setImageFileNameWall(String imageFileNameWall) {
         this.ImageFileNameWall.set(imageFileNameWall);
     }
 
+    //img: Player
+    private StringProperty ImageFileNameCharacter = new SimpleStringProperty();
     public String getImageFileNameCharacter() {
         return ImageFileNameCharacter.get();
     }
-
     public void setImageFileNameCharacter(String imageFileNameCharacter) {
         this.ImageFileNameCharacter.set(imageFileNameCharacter);
     }
-    //endregion
+
+    //img: Goal
+    private StringProperty ImageFileNameGoal = new SimpleStringProperty();
+    public String getImageFileNameGoal() {
+        return ImageFileNameGoal.get();
+    }
+    public void setImageFileNameGoal(String imageFileNameGoal) {
+        this.ImageFileNameGoal.set(imageFileNameGoal);
+    }
+
+
 
 
 
