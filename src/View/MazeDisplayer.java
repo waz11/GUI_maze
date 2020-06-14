@@ -15,8 +15,8 @@ public class MazeDisplayer extends Canvas {
         if (maze != null) {
             double canvasHeight = getHeight();
             double canvasWidth = getWidth();
-            double x = canvasHeight / maze.length;
-            double y = canvasWidth / maze[0].length;
+            double y = canvasHeight / maze.length;
+            double x = canvasWidth / maze[0].length;
 
             try {
                 Image wallImage = new Image(new FileInputStream(ImageFileNameWall.get()));
@@ -27,6 +27,8 @@ public class MazeDisplayer extends Canvas {
                 gc.clearRect(0, 0, getWidth(), getHeight());
                 int rows = maze.length;
                 int cols = maze[0].length;
+
+                System.out.println(rows +" "+ cols);
 
                 //Draw Maze
                 for (int row = 0; row < rows; row++) {
@@ -39,7 +41,7 @@ public class MazeDisplayer extends Canvas {
                 //Draw Character
                 gc.drawImage(characterImage, characterPositionColumn * x, characterPositionRow * y, x, y);
                 //Draw Goal
-//                gc.drawImage(goalImage, characterPositionColumn * x, characterPositionRow * y, x, y);
+                gc.drawImage(goalImage, goalRow * x, goalCol * y, x, y);
 
             } catch (FileNotFoundException e) {
                 //e.printStackTrace();
@@ -64,6 +66,8 @@ public class MazeDisplayer extends Canvas {
     }
 
     // Goal
+    private int goalRow;
+    private int goalCol;
     private StringProperty ImageFileNameGoal = new SimpleStringProperty();
     public String getImageFileNameGoal() {
         return ImageFileNameGoal.get();
@@ -74,8 +78,8 @@ public class MazeDisplayer extends Canvas {
 
 
     // Player:
-    private int characterPositionRow = 1;
-    private int characterPositionColumn = 1;
+    private int characterPositionRow;
+    private int characterPositionColumn;
     private StringProperty ImageFileNameCharacter = new SimpleStringProperty();
 
     public void setImageFileNameCharacter(String imageFileNameCharacter) {
