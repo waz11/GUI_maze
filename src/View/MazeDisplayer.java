@@ -28,8 +28,6 @@ public class MazeDisplayer extends Canvas {
                 int rows = maze.length;
                 int cols = maze[0].length;
 
-                System.out.println(rows +" "+ cols);
-
                 //Draw Maze
                 for (int row = 0; row < rows; row++) {
                     for (int col = 0; col < cols; col++) {
