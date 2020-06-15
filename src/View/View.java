@@ -14,9 +14,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -31,8 +33,12 @@ public class View implements Observer, IView {
     public javafx.scene.control.Label lbl_columnsNum;
     public javafx.scene.control.Button btn_generateMaze;
     public javafx.scene.control.Button btn_solveMaze;
+    public javafx.scene.control.MenuItem btn_saveMaze;
     public boolean isGameOver = false;
     public boolean haveMaze = false;
+    public boolean showSolution = false;
+
+    public static int counter = 0;
 
 
     public void setViewModel(ViewModel viewModel) {
@@ -60,7 +66,11 @@ public class View implements Observer, IView {
             alert_gameOver.setContentText(String.format("Great! Game Completed!"));
             alert_gameOver.show();
         }
-        mazeDisplayer.setMaze(maze);
+
+        if(showSolution)
+            mazeDisplayer.showSolution(viewModel.getSolution());
+        else
+            mazeDisplayer.setMaze(maze);
         int characterPositionRow = viewModel.getCharacterPositionRow();
         int characterPositionColumn = viewModel.getCharacterPositionColumn();
         mazeDisplayer.setCharacterPosition(characterPositionRow, characterPositionColumn);
@@ -76,11 +86,16 @@ public class View implements Observer, IView {
 
         btn_generateMaze.setDisable(true);
         isGameOver = false;
+        showSolution = false;
         viewModel.generateMaze(rows, cols);
+        btn_solveMaze.setDisable(false);
     }
 
     public void solveMaze(ActionEvent actionEvent) {
-        viewModel.solveMaze();
+        if(haveMaze){
+            viewModel.solveMaze();
+            showSolution = true;
+        }
     }
 
     private void showAlert(String alertMessage) {
@@ -143,4 +158,41 @@ public class View implements Observer, IView {
         this.mazeDisplayer.requestFocus();
     }
 
+    public void saveMaze(ActionEvent actionEvent) {
+        if(!haveMaze) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText(String.format("Please start a maze first."));
+            alert.show();
+        }
+        else {
+            FileChooser fc = new FileChooser();
+            fc.setTitle("Save Maze");
+            fc.setInitialFileName("maze_" + counter);
+            counter++;
+            File file = new File("./SavedMazes/");
+            if (!file.exists())
+                file.mkdir();
+            fc.setInitialDirectory(file);
+            File dest = fc.showSaveDialog(mazeDisplayer.getScene().getWindow());
+            if (dest != null)
+                viewModel.saveMaze(dest);
+        }
+    }
+
+    public void loadMaze(ActionEvent actionEvent) {
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Load a Maze");
+
+        File file = new File("./SavedMazes/");
+        if (!file.exists())
+            file = new File("./");
+
+        fc.setInitialDirectory(file);
+        File dest = fc.showOpenDialog(mazeDisplayer.getScene().getWindow());
+        if (dest != null) {
+            viewModel.loadMaze(dest);
+            haveMaze = true;
+        }
+
+    }
 }

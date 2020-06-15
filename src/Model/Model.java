@@ -1,6 +1,7 @@
 package Model;
 
 import Client.*;
+import IO.MyCompressorOutputStream;
 import IO.MyDecompressorInputStream;
 import Server.*;
 import algorithms.mazeGenerators.EmptyMazeGenerator;
@@ -28,8 +29,11 @@ public class Model extends Observable implements IModel {
 
     private Server severGenerate;
     private Server serverSolve;
-    private boolean isGameOver=false;
+    private boolean isGameOver = false;
     private Maze maze;
+
+    Position startPosition;
+    Position goalPosition;
 
     public Model() {
         severGenerate = new Server(5400, 1000, new ServerStrategyGenerateMaze());
@@ -71,13 +75,13 @@ public class Model extends Observable implements IModel {
                         ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
                         toServer.flush();
 
-                        int[] mazeDimensions = new int[]{rows,cols};
+                        int[] mazeDimensions = new int[]{rows, cols};
                         toServer.writeObject(mazeDimensions); //send maze dimensions to server
                         toServer.flush();
 
                         byte[] compressedMaze = (byte[]) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
                         InputStream is = new MyDecompressorInputStream(new ByteArrayInputStream(compressedMaze));
-                        byte[] decompressedMaze = new byte[rows*cols+12 /*CHANGE SIZE ACCORDING TO YOU MAZE SIZE*/]; //allocating byte[] for the decompressed maze -
+                        byte[] decompressedMaze = new byte[rows * cols + 12 /*CHANGE SIZE ACCORDING TO YOU MAZE SIZE*/]; //allocating byte[] for the decompressed maze -
                         is.read(decompressedMaze); //Fill decompressedMaze with bytes
                         maze = new Maze(decompressedMaze);
                         player_row = maze.getStartPosition().getRowIndex();
@@ -113,7 +117,8 @@ public class Model extends Observable implements IModel {
     }
 
     public Solution solution;
-    public void solveMazeServer(){
+
+    public void solveMazeServer() {
         try {
             Client client = new Client(InetAddress.getLocalHost(), 5401, new IClientStrategy() {
                 @Override
@@ -125,7 +130,7 @@ public class Model extends Observable implements IModel {
 
                         toServer.writeObject(maze); //send maze to server
                         toServer.flush();
-                        solution= (Solution) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
+                        solution = (Solution) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
 
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -138,7 +143,7 @@ public class Model extends Observable implements IModel {
         }
     }
 
-    public Solution getSolution(){
+    public Solution getSolution() {
         return solution;
     }
 
@@ -154,7 +159,7 @@ public class Model extends Observable implements IModel {
 
     @Override
     public void moveCharacter(KeyCode movement) {
-        if(!isGameOver) {
+        if (!isGameOver) {
             int rows = maze.getRows();
             int cols = maze.getCols();
             int row = player_row;
@@ -244,5 +249,56 @@ public class Model extends Observable implements IModel {
     public void setGoal_col(int goal_col) {
         this.goal_col = goal_col;
     }
+
+
+
+
+    public void saveMaze(File file) {
+        try {
+            FileOutputStream outFile = new FileOutputStream(file);
+            ObjectOutputStream returnFile = new ObjectOutputStream(outFile);
+            Position start = maze.getStartPosition();
+            Position goal = maze.getGoalPosition();
+            maze.setStart(new Position(player_row, player_col));
+            returnFile.writeObject(maze);
+            returnFile.flush();
+            maze.setStart(start);
+            maze.setGoal(goal);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void loadMaze(File dest) {
+        FileInputStream in = null;
+        try {
+            in = new FileInputStream(dest);
+            ObjectInputStream returnFile = new ObjectInputStream(in);
+            Maze savedMaze = (Maze) returnFile.readObject();
+            returnFile.close();
+            maze = savedMaze;
+
+            int[][] maze_arr = new int[savedMaze.getRows()][savedMaze.getCols()];
+            for (int row = 0; row < savedMaze.getRows(); row++) {
+                for (int column = 0; column < savedMaze.getCols(); column++)
+                    if(maze.isPath(new Position(row, column)))
+                        maze_arr[row][column] = 0;
+                    else
+                        maze_arr[row][column] = 1;
+            }
+            startPosition = maze.getStartPosition();
+            goalPosition = maze.getGoalPosition();
+            isGameOver = false;
+            player_row = startPosition.getRowIndex();
+            player_col = startPosition.getColumnIndex();
+            setChanged();
+            notifyObservers();
+        } catch (ClassNotFoundException e) {
+        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
+        }
+
+    }
+
 
 }

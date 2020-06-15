@@ -42,7 +42,6 @@ public class MazeDisplayer extends Canvas {
         canvasWidth = getWidth();
         y = canvasHeight / maze.getRows();
         x = canvasWidth / maze.getCols();
-        showSolution = true;
         redraw();
     }
 
@@ -65,8 +64,8 @@ public class MazeDisplayer extends Canvas {
                 Position p = new Position(row, col);
                 if (maze.isWall(p))
                     gc.drawImage(wallImage, col * x, row * y, x, y);
-//                else if(solution!=null && solution.getSolutionPath().contains(p))
-//                    gc.drawImage(solutionImg, col * x, row * y, x, y);
+                //else if(solution!=null && solution.getSolutionPath().contains(p))
+                    //gc.drawImage(solutionImg, col * x, row * y, x, y);
             }
         }
     }
@@ -103,7 +102,7 @@ public class MazeDisplayer extends Canvas {
 
     public void showSolution(Solution sol) {
         solution = sol;
-        showSolution = true;
+        redraw();
         drawSolution();
     }
 
