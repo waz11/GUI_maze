@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -39,7 +40,6 @@ public class View implements Observer, IView {
     public boolean showSolution = false;
 
     public static int counter = 0;
-
 
     public void setViewModel(ViewModel viewModel) {
         this.viewModel = viewModel;
@@ -122,22 +122,6 @@ public class View implements Observer, IView {
         return characterPositionColumn.get();
     }
 
-    public void setResizeEvent(Scene scene) {
-        long width = 0;
-        long height = 0;
-        scene.widthProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
-//                System.out.println("Width: " + newSceneWidth);
-            }
-        });
-        scene.heightProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
-//                System.out.println("Height: " + newSceneHeight);
-            }
-        });
-    }
 
     public void About(ActionEvent actionEvent) {
         try {
@@ -193,6 +177,27 @@ public class View implements Observer, IView {
             viewModel.loadMaze(dest);
             haveMaze = true;
         }
-
     }
+
+
+
+    // windows size:
+    public void setResizeEvent(Scene scene) {
+        long width = 0;
+        long height = 0;
+        scene.widthProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
+//                System.out.println("Width: " + newSceneWidth);
+                mazeDisplayer.redraw();
+            }
+        });
+        scene.heightProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
+                mazeDisplayer.redraw();
+            }
+        });
+    }
+
 }
