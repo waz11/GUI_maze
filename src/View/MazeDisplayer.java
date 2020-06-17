@@ -48,6 +48,8 @@ public class MazeDisplayer extends Canvas {
     public void redraw() {
         if (maze == null) return;
         drawMaze();
+        if (showSolution)
+            drawSolution();
         drawPlayer();
         drawGoal();
     }
@@ -55,14 +57,11 @@ public class MazeDisplayer extends Canvas {
     public void drawMaze() {
         try {
             wallImage = new Image(new FileInputStream(ImageFileNameWall.get()));
-            solutionImg = new Image(new FileInputStream(imageFileNameSolution.get()));
         } catch (FileNotFoundException e) {
         }
         GraphicsContext gc = getGraphicsContext2D();
         gc.clearRect(0, 0, getWidth(), getHeight());
-        if (showSolution){
-            drawSolution();
-        }
+
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
                 Position p = new Position(row, col);
