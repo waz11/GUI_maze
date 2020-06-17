@@ -31,6 +31,7 @@ public class MyModel extends Observable implements IModel {
     private Server severGenerate;
     private Server serverSolve;
     private boolean isGameOver = false;
+    private boolean solveMaze = false;
     private Maze maze;
 
     Position startPosition;
@@ -64,6 +65,7 @@ public class MyModel extends Observable implements IModel {
             setChanged();
             notifyObservers();
         });
+        solveMaze = false;
     }
 
 
@@ -101,6 +103,7 @@ public class MyModel extends Observable implements IModel {
             client.communicateWithServer();
         } catch (UnknownHostException e) {
         }
+
         return maze;
     }
 
@@ -115,6 +118,7 @@ public class MyModel extends Observable implements IModel {
             setChanged();
             notifyObservers("solution");
         });
+        solveMaze = true;
     }
 
     public Solution solution;
@@ -128,7 +132,7 @@ public class MyModel extends Observable implements IModel {
                         ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
                         ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
                         toServer.flush();
-
+                        maze.setStart(new Position(player_row, player_col));
                         toServer.writeObject(maze); //send maze to server
                         toServer.flush();
                         solution = (Solution) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
@@ -142,6 +146,7 @@ public class MyModel extends Observable implements IModel {
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
+
     }
 
     public Solution getSolution() {
@@ -215,6 +220,8 @@ public class MyModel extends Observable implements IModel {
 
             if (player_row == maze.getGoalPosition().getRowIndex() && player_col == maze.getGoalPosition().getColumnIndex())
                 isGameOver = true;
+            if (solveMaze)
+                solveMaze();
             setChanged();
             notifyObservers();
         }

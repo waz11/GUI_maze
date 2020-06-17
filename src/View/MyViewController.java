@@ -55,9 +55,8 @@ public class MyViewController implements Observer, IView {
             isGameOver = myViewModel.isGameOver();
             if (arg != null && arg == "solution") {
                 mazeDisplayer.showSolution(myViewModel.getSolution());
-            } else {
-                displayMaze(myViewModel.getMaze());
             }
+            displayMaze(myViewModel.getMaze());
             btn_generateMaze.setDisable(false);
         }
     }
@@ -69,16 +68,14 @@ public class MyViewController implements Observer, IView {
             alert_gameOver.setContentText(String.format("Great! Game Completed!"));
             alert_gameOver.show();
         }
-
-        if(showSolution)
-            mazeDisplayer.showSolution(myViewModel.getSolution());
-        else
-            mazeDisplayer.setMaze(maze);
         int characterPositionRow = myViewModel.getCharacterPositionRow();
         int characterPositionColumn = myViewModel.getCharacterPositionColumn();
         mazeDisplayer.setCharacterPosition(characterPositionRow, characterPositionColumn);
         this.characterPositionRow.set(characterPositionRow + "");
         this.characterPositionColumn.set(characterPositionColumn + "");
+        if (!isGameOver)
+            mazeDisplayer.setMaze(maze);
+
 
     }
 
