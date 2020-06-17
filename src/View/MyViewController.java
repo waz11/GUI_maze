@@ -1,6 +1,6 @@
 package View;
 
-import ViewModel.ViewModel;
+import ViewModel.MyViewModel;
 import algorithms.mazeGenerators.Maze;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -14,7 +14,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -23,10 +22,10 @@ import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
 
-public class View implements Observer, IView {
+public class MyViewController implements Observer, IView {
 
     @FXML
-    private ViewModel viewModel;
+    private MyViewModel myViewModel;
     public MazeDisplayer mazeDisplayer;
     public javafx.scene.control.TextField txtfld_rowsNum;
     public javafx.scene.control.TextField txtfld_columnsNum;
@@ -34,26 +33,30 @@ public class View implements Observer, IView {
     public javafx.scene.control.Label lbl_columnsNum;
     public javafx.scene.control.Button btn_generateMaze;
     public javafx.scene.control.Button btn_solveMaze;
+    public javafx.scene.control.MenuItem btn_newMaze;
     public javafx.scene.control.MenuItem btn_saveMaze;
+    public javafx.scene.control.MenuItem btn_loadMaze;
+    public javafx.scene.control.MenuItem btn_options;
+
     public boolean isGameOver = false;
     public boolean haveMaze = false;
     public boolean showSolution = false;
 
     public static int counter = 0;
 
-    public void setViewModel(ViewModel viewModel) {
-        this.viewModel = viewModel;
+    public void setMyViewModel(MyViewModel myViewModel) {
+        this.myViewModel = myViewModel;
     }
 
 
     @Override
     public void update(Observable o, Object arg) {
-        if (o == viewModel) {
-            isGameOver = viewModel.isGameOver();
+        if (o == myViewModel) {
+            isGameOver = myViewModel.isGameOver();
             if (arg != null && arg == "solution") {
-                mazeDisplayer.showSolution(viewModel.getSolution());
+                mazeDisplayer.showSolution(myViewModel.getSolution());
             } else {
-                displayMaze(viewModel.getMaze());
+                displayMaze(myViewModel.getMaze());
             }
             btn_generateMaze.setDisable(false);
         }
@@ -68,11 +71,11 @@ public class View implements Observer, IView {
         }
 
         if(showSolution)
-            mazeDisplayer.showSolution(viewModel.getSolution());
+            mazeDisplayer.showSolution(myViewModel.getSolution());
         else
             mazeDisplayer.setMaze(maze);
-        int characterPositionRow = viewModel.getCharacterPositionRow();
-        int characterPositionColumn = viewModel.getCharacterPositionColumn();
+        int characterPositionRow = myViewModel.getCharacterPositionRow();
+        int characterPositionColumn = myViewModel.getCharacterPositionColumn();
         mazeDisplayer.setCharacterPosition(characterPositionRow, characterPositionColumn);
         this.characterPositionRow.set(characterPositionRow + "");
         this.characterPositionColumn.set(characterPositionColumn + "");
@@ -84,16 +87,23 @@ public class View implements Observer, IView {
         int rows = Integer.valueOf(txtfld_rowsNum.getText());
         int cols = Integer.valueOf(txtfld_columnsNum.getText());
 
-        btn_generateMaze.setDisable(true);
-        isGameOver = false;
-        showSolution = false;
-        viewModel.generateMaze(rows, cols);
-        btn_solveMaze.setDisable(false);
+        if(rows<2 || cols<2){
+            showAlert("Please choose valid dimensions. (rows and columns bigger than 1)");
+        }
+        else {
+
+            btn_generateMaze.setDisable(true);
+            isGameOver = false;
+            showSolution = false;
+            myViewModel.generateMaze(rows, cols);
+            btn_solveMaze.setDisable(false);
+            mazeDisplayer.newMaze();
+        }
     }
 
     public void solveMaze(ActionEvent actionEvent) {
         if(haveMaze){
-            viewModel.solveMaze();
+            myViewModel.solveMaze();
             showSolution = true;
         }
     }
@@ -106,7 +116,7 @@ public class View implements Observer, IView {
 
     public void KeyPressed(KeyEvent keyEvent) {
         if(haveMaze) {
-            viewModel.moveCharacter(keyEvent.getCode());
+            myViewModel.moveCharacter(keyEvent.getCode());
             keyEvent.consume();
         }
     }
@@ -134,6 +144,24 @@ public class View implements Observer, IView {
             stage.initModality(Modality.APPLICATION_MODAL); //Lock the window until it closes
             stage.show();
         } catch (Exception e) {
+        }
+    }
+
+    public void Options(ActionEvent actionEvent) {
+        try {
+            Stage stage = new Stage();
+            stage.setTitle("Options");
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            Parent root = fxmlLoader.load(getClass().getResource("Options.fxml").openStream());
+
+            Options options = fxmlLoader.getController();
+            options.setMyViewModel(myViewModel);
+            Scene scene = new Scene(root, 350, 200);
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL); //Lock the window until it closes
+            stage.show();
+
+        } catch (Exception e) {
 
         }
     }
@@ -159,7 +187,7 @@ public class View implements Observer, IView {
             fc.setInitialDirectory(file);
             File dest = fc.showSaveDialog(mazeDisplayer.getScene().getWindow());
             if (dest != null)
-                viewModel.saveMaze(dest);
+                myViewModel.saveMaze(dest);
         }
     }
 
@@ -174,7 +202,7 @@ public class View implements Observer, IView {
         fc.setInitialDirectory(file);
         File dest = fc.showOpenDialog(mazeDisplayer.getScene().getWindow());
         if (dest != null) {
-            viewModel.loadMaze(dest);
+            myViewModel.loadMaze(dest);
             haveMaze = true;
         }
     }
@@ -199,5 +227,11 @@ public class View implements Observer, IView {
             }
         });
     }
+
+
+    //options:
+
+
+
 
 }

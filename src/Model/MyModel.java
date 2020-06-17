@@ -16,11 +16,12 @@ import java.io.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Observable;
+import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
-public class Model extends Observable implements IModel {
+public class MyModel extends Observable implements IModel {
     private ExecutorService threadPool = Executors.newCachedThreadPool();
     private int player_row = 0;
     private int player_col = 0;
@@ -35,7 +36,7 @@ public class Model extends Observable implements IModel {
     Position startPosition;
     Position goalPosition;
 
-    public Model() {
+    public MyModel() {
         severGenerate = new Server(5400, 1000, new ServerStrategyGenerateMaze());
         serverSolve = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
     }
@@ -251,8 +252,6 @@ public class Model extends Observable implements IModel {
     }
 
 
-
-
     public void saveMaze(File file) {
         try {
             FileOutputStream outFile = new FileOutputStream(file);
@@ -281,7 +280,7 @@ public class Model extends Observable implements IModel {
             int[][] maze_arr = new int[savedMaze.getRows()][savedMaze.getCols()];
             for (int row = 0; row < savedMaze.getRows(); row++) {
                 for (int column = 0; column < savedMaze.getCols(); column++)
-                    if(maze.isPath(new Position(row, column)))
+                    if (maze.isPath(new Position(row, column)))
                         maze_arr[row][column] = 0;
                     else
                         maze_arr[row][column] = 1;
@@ -300,5 +299,26 @@ public class Model extends Observable implements IModel {
 
     }
 
+    public void setProperties(String generate, String solving) throws IOException {
+        File file = new File("resources/config.properties");
+        Properties properties = new Properties();
+
+//        if(file.length() == 0)
+//            Server.Configurations.configurations();
+
+        InputStream input = new FileInputStream("resources/config.properties");
+        OutputStream out = new FileOutputStream("./resources/config.properties");
+
+        properties.load(input);
+        properties.setProperty("generator", generate);
+        properties.setProperty("searchAlgorithm", solving);
+        properties.setProperty("threads", "5");
+        properties.store(out, null);
+
+
+    }
+
 
 }
+
+

@@ -5,16 +5,20 @@ import algorithms.mazeGenerators.Maze;
 import algorithms.search.Solution;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.event.ActionEvent;
 import javafx.scene.input.KeyCode;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Observable;
 import java.util.Observer;
 
 /**
  * Created by Aviadjo on 6/14/2017.
  */
-public class ViewModel extends Observable implements Observer {
+public class MyViewModel extends Observable implements Observer {
 
     private IModel model;
 
@@ -28,7 +32,7 @@ public class ViewModel extends Observable implements Observer {
 
     private boolean isGameOver = false;
 
-    public ViewModel(IModel model){
+    public MyViewModel(IModel model){
         this.model = model;
     }
 
@@ -97,4 +101,18 @@ public class ViewModel extends Observable implements Observer {
         model.loadMaze(dest);
     }
 
+
+    public void setProperties(String generate, String solving){
+        try {
+            model.setProperties(generate,solving);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void check(){
+
+    }
 }

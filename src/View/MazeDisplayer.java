@@ -32,7 +32,7 @@ public class MazeDisplayer extends Canvas {
     private StringProperty ImageFileNameCharacter= new SimpleStringProperty();;
     private int characterPositionRow;
     private int characterPositionColumn;
-    private boolean showSolution;
+    private static boolean showSolution = false;
 
     public void setMaze(Maze maze) {
         this.maze = maze;
@@ -64,8 +64,8 @@ public class MazeDisplayer extends Canvas {
                 Position p = new Position(row, col);
                 if (maze.isWall(p))
                     gc.drawImage(wallImage, col * x, row * y, x, y);
-                //else if(solution!=null && solution.getSolutionPath().contains(p))
-                    //gc.drawImage(solutionImg, col * x, row * y, x, y);
+                else if(showSolution && solution.getSolutionPath().contains(p))
+                    gc.drawImage(solutionImg, col * x, row * y, x, y);
             }
         }
     }
@@ -102,9 +102,12 @@ public class MazeDisplayer extends Canvas {
 
     public void showSolution(Solution sol) {
         solution = sol;
-        redraw();
-        drawSolution();
+        //redraw();
+        //drawSolution();
+        showSolution = true;
     }
+
+    public void newMaze(){ showSolution = false;}
 
     public String getImageFileNameWall() {
         return ImageFileNameWall.get();
