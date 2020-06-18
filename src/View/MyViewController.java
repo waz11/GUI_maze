@@ -2,6 +2,7 @@ package View;
 
 import ViewModel.MyViewModel;
 import algorithms.mazeGenerators.Maze;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
@@ -12,13 +13,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -37,6 +42,8 @@ public class MyViewController implements Observer, IView {
     public javafx.scene.control.MenuItem btn_saveMaze;
     public javafx.scene.control.MenuItem btn_loadMaze;
     public javafx.scene.control.MenuItem btn_options;
+    public javafx.scene.control.MenuItem btn_help;
+
 
     public boolean isGameOver = false;
     public boolean haveMaze = false;
@@ -64,6 +71,7 @@ public class MyViewController implements Observer, IView {
     @Override
     public void displayMaze(Maze maze) {
         if (isGameOver) {
+            mazeDisplayer.cancelSolution();
             Alert alert_gameOver = new Alert(Alert.AlertType.INFORMATION);
             alert_gameOver.setContentText(String.format("Great! Game Completed!"));
             alert_gameOver.show();
@@ -73,33 +81,36 @@ public class MyViewController implements Observer, IView {
         mazeDisplayer.setCharacterPosition(characterPositionRow, characterPositionColumn);
         this.characterPositionRow.set(characterPositionRow + "");
         this.characterPositionColumn.set(characterPositionColumn + "");
-        if (!isGameOver)
-            mazeDisplayer.setMaze(maze);
-
+        mazeDisplayer.setMaze(maze);
 
     }
 
     public void generateMaze() {
         haveMaze = true;
-        int rows = Integer.valueOf(txtfld_rowsNum.getText());
-        int cols = Integer.valueOf(txtfld_columnsNum.getText());
-
-        if(rows<2 || cols<2){
-            showAlert("Please choose valid dimensions. (rows and columns bigger than 1)");
+        String input_row = txtfld_rowsNum.getText();
+        String input_col = txtfld_columnsNum.getText();
+        try {
+            int rows = Integer.parseInt(input_row);
+            int cols = Integer.parseInt(input_col);
+            if (rows < 2 || cols < 2) {
+                showAlert("Please choose valid dimensions. (rows and columns bigger than 1)");
+            } else {
+                btn_generateMaze.setDisable(true);
+                isGameOver = false;
+                showSolution = false;
+                myViewModel.generateMaze(rows, cols);
+                btn_solveMaze.setDisable(false);
+                mazeDisplayer.newMaze();
+                mazeDisplayer.platMusic();
+            }
+        } catch (Exception e) {
+            showAlert("Please enter numbers.");
         }
-        else {
 
-            btn_generateMaze.setDisable(true);
-            isGameOver = false;
-            showSolution = false;
-            myViewModel.generateMaze(rows, cols);
-            btn_solveMaze.setDisable(false);
-            mazeDisplayer.newMaze();
-        }
     }
 
     public void solveMaze(ActionEvent actionEvent) {
-        if(haveMaze){
+        if (haveMaze && !isGameOver) {
             myViewModel.solveMaze();
             showSolution = true;
         }
@@ -112,7 +123,7 @@ public class MyViewController implements Observer, IView {
     }
 
     public void KeyPressed(KeyEvent keyEvent) {
-        if(haveMaze) {
+        if (haveMaze) {
             myViewModel.moveCharacter(keyEvent.getCode());
             keyEvent.consume();
         }
@@ -125,6 +136,7 @@ public class MyViewController implements Observer, IView {
     public String getCharacterPositionRow() {
         return characterPositionRow.get();
     }
+
     public String getCharacterPositionColumn() {
         return characterPositionColumn.get();
     }
@@ -136,7 +148,7 @@ public class MyViewController implements Observer, IView {
             stage.setTitle("About");
             FXMLLoader fxmlLoader = new FXMLLoader();
             Parent root = fxmlLoader.load(getClass().getResource("About.fxml").openStream());
-            Scene scene = new Scene(root, 400, 350);
+            Scene scene = new Scene(root, 566, 100);
             stage.setScene(scene);
             stage.initModality(Modality.APPLICATION_MODAL); //Lock the window until it closes
             stage.show();
@@ -163,17 +175,27 @@ public class MyViewController implements Observer, IView {
         }
     }
 
+    public void Help(ActionEvent actionEvent) {
+        Pane pane = new Pane();
+        Stage newStage = new Stage();
+        String path = "resources/Images/help.png";
+        Image help = new Image(Paths.get(path).toUri().toString());
+        pane.getChildren().add(new ImageView(help));
+        Scene scene = new Scene(pane, 630, 300);
+        newStage.setScene(scene);
+        newStage.show();
+    }
+
     public void mouseClicked(MouseEvent mouseEvent) {
         this.mazeDisplayer.requestFocus();
     }
 
     public void saveMaze(ActionEvent actionEvent) {
-        if(!haveMaze) {
+        if (!haveMaze) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText(String.format("Please start a maze first."));
             alert.show();
-        }
-        else {
+        } else {
             FileChooser fc = new FileChooser();
             fc.setTitle("Save Maze");
             fc.setInitialFileName("maze_" + counter);
@@ -205,7 +227,6 @@ public class MyViewController implements Observer, IView {
     }
 
 
-
     // windows size:
     public void setResizeEvent(Scene scene) {
         long width = 0;
@@ -225,10 +246,14 @@ public class MyViewController implements Observer, IView {
         });
     }
 
+    public void Exit(ActionEvent actionEvent) {
+        myViewModel.exit();
+        Platform.exit();
+
+    }
+
 
     //options:
-
-
 
 
 }

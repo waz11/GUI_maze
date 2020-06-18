@@ -12,6 +12,7 @@ import algorithms.search.AState;
 import algorithms.search.Solution;
 import javafx.scene.input.KeyCode;
 
+
 import java.io.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -52,6 +53,10 @@ public class MyModel extends Observable implements IModel {
         serverSolve.stop();
     }
 
+    public void exit(){
+        stopServers();
+    }
+
 
     @Override
     public void generateMaze(int rows, int cols) {
@@ -62,10 +67,10 @@ public class MyModel extends Observable implements IModel {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            solveMaze = false;
             setChanged();
             notifyObservers();
         });
-        solveMaze = false;
     }
 
 
@@ -115,10 +120,10 @@ public class MyModel extends Observable implements IModel {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            solveMaze = true;
             setChanged();
             notifyObservers("solution");
         });
-        solveMaze = true;
     }
 
     public Solution solution;
@@ -218,12 +223,19 @@ public class MyModel extends Observable implements IModel {
             }
 
 
-            if (player_row == maze.getGoalPosition().getRowIndex() && player_col == maze.getGoalPosition().getColumnIndex())
+            if (player_row == maze.getGoalPosition().getRowIndex() && player_col == maze.getGoalPosition().getColumnIndex()){
                 isGameOver = true;
-            if (solveMaze)
-                solveMaze();
-            setChanged();
-            notifyObservers();
+                solveMaze = false;
+            }
+            if (solveMaze && !isGameOver){
+                solveMazeServer();
+                setChanged();
+                notifyObservers("solution");
+            }
+            else{
+                setChanged();
+                notifyObservers();
+            }
         }
     }
 
@@ -322,6 +334,8 @@ public class MyModel extends Observable implements IModel {
         properties.setProperty("threads", "5");
         properties.store(out, null);
 
+        input.close();
+        out.close();
 
     }
 

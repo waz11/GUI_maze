@@ -24,5 +24,6 @@ public interface IModel {
     void saveMaze(File dest);
     void loadMaze(File dest);
     public void setProperties(String generate, String solving) throws IOException;
+    public void exit();
 
 }

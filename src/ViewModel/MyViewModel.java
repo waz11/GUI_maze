@@ -115,4 +115,8 @@ public class MyViewModel extends Observable implements Observer {
     public void check(){
 
     }
+
+    public void exit(){
+        model.exit();
+    }
 }

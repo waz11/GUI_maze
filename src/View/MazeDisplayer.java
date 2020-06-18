@@ -9,9 +9,13 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
 
 public class MazeDisplayer extends Canvas {
     private Maze maze;
@@ -50,13 +54,24 @@ public class MazeDisplayer extends Canvas {
         drawMaze();
         if (showSolution)
             drawSolution();
-        drawPlayer();
         drawGoal();
+        drawPlayer();
     }
+
+    public void platMusic(){
+//        String musicFile = "../resources/sound/audio.mp3";
+//        Media sound = new Media(new File(musicFile).toURI().toString());
+//        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+//        mediaPlayer.play();
+    }
+
+
+
 
     public void drawMaze() {
         try {
             wallImage = new Image(new FileInputStream(ImageFileNameWall.get()));
+            solutionImg = new Image(new FileInputStream(imageFileNameSolution.get()));
         } catch (FileNotFoundException e) {
         }
         GraphicsContext gc = getGraphicsContext2D();
@@ -69,7 +84,6 @@ public class MazeDisplayer extends Canvas {
                     gc.drawImage(wallImage, col * x, row * y, x, y);
             }
         }
-
     }
 
     private void drawPlayer() {
@@ -98,7 +112,8 @@ public class MazeDisplayer extends Canvas {
         GraphicsContext gc = getGraphicsContext2D();
         for (int i = 0; i < solution.getSolutionPath().size(); i++) {
             MazeState position = (MazeState) solution.getSolutionPath().get(i);
-            gc.drawImage(solutionImg, position.getState().getColumnIndex() * x, position.getState().getRowIndex() * y, x, y);
+            if (!(position.getState().getColumnIndex() == characterPositionColumn && position.getState().getRowIndex() == characterPositionRow))
+                gc.drawImage(solutionImg, position.getState().getColumnIndex() * x, position.getState().getRowIndex() * y, x, y);
         }
     }
 
@@ -109,7 +124,14 @@ public class MazeDisplayer extends Canvas {
         showSolution = true;
     }
 
-    public void newMaze(){ showSolution = false;}
+    public void cancelSolution(){
+        showSolution = false;
+    }
+
+    public void newMaze(){
+        showSolution = false;
+
+    }
 
     public String getImageFileNameWall() {
         return ImageFileNameWall.get();

@@ -26,11 +26,20 @@
                                 <MenuItem mnemonicParsing="false" fx:id="btn_options" onAction="#Options" text="Options" />
                             </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="Exit" />
-                        <Menu mnemonicParsing="false" text="Help" />
+
+                        <Menu mnemonicParsing="false" text="Help" >
+                            <items>
+                                <MenuItem mnemonicParsing="false" fx:id="btn_help" onAction="#Help" text="Help" />
+                            </items>
+                        </Menu>
                         <Menu mnemonicParsing="false" text="About">
                             <items>
                                 <MenuItem mnemonicParsing="false" onAction="#About" text="About" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Exit">
+                            <items>
+                                <MenuItem mnemonicParsing="false" fx:id="btn_exit" onAction="#Exit" text="Exit" />
                             </items>
                         </Menu>
                     </menus>
@@ -96,7 +105,7 @@
     <center>
         <Pane style="-fx-background-color: whitesmoke; -fx-border-color: black" BorderPane.alignment="CENTER">
             <children>
-                <MazeDisplayer fx:id="mazeDisplayer" height="600" imageFileNameCharacter="resources/Images/player.png" imageFileNameGoal="resources/Images/goal.png" imageFileNameSolution="resources/Images/solution.png" imageFileNameWall="resources/Images/border.png" layoutY="5.0" onMouseClicked="#mouseClicked" style="-fx-border-color: black;                                -fx-border-width: 12px solid;                                -fx-background-color: white;" width="586">
+                <MazeDisplayer fx:id="mazeDisplayer" height="600" imageFileNameCharacter="resources/Images/player2.png" imageFileNameGoal="resources/Images/goal.png" imageFileNameSolution="resources/Images/solution1.png" imageFileNameWall="resources/Images/border2.png" layoutY="5.0" onMouseClicked="#mouseClicked" style="-fx-border-color: black;                                -fx-border-width: 12px solid;                                -fx-background-color: white;" width="586">
                     <effect>
                         <Glow />
                     </effect>
