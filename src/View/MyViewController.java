@@ -266,8 +266,12 @@ public class MyViewController implements Observer, IView {
         fc.setInitialDirectory(file);
         File dest = fc.showOpenDialog(mazeDisplayer.getScene().getWindow());
         if (dest != null) {
+            showSolution = false;
+            mazeDisplayer.cancelSolution();
+            btn_solveMaze.setText("Solve Maze");
             myViewModel.loadMaze(dest);
             haveMaze = true;
+            playMusic();
         }
     }
 

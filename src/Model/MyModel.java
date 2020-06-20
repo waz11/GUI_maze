@@ -307,6 +307,7 @@ public class MyModel extends Observable implements IModel {
             startPosition = maze.getStartPosition();
             goalPosition = maze.getGoalPosition();
             isGameOver = false;
+            solveMaze = false;
             player_row = startPosition.getRowIndex();
             player_col = startPosition.getColumnIndex();
             setChanged();

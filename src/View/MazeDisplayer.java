@@ -66,10 +66,6 @@ public class MazeDisplayer extends Canvas {
     }
 
 
-
-
-
-
     public void drawMaze() {
         try {
             wallImage = new Image(new FileInputStream(ImageFileNameWall.get()));
