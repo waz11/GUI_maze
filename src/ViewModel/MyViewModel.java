@@ -112,6 +112,10 @@ public class MyViewModel extends Observable implements Observer {
         }
     }
 
+    public void hideSolution(){
+        model.hideSolution();
+    }
+
     public void check(){
 
     }

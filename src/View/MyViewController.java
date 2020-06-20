@@ -17,7 +17,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -48,8 +51,10 @@ public class MyViewController implements Observer, IView {
     public boolean isGameOver = false;
     public boolean haveMaze = false;
     public boolean showSolution = false;
+    public boolean ctrlON = false;
 
     public static int counter = 0;
+    private MediaPlayer mediaPlayer;
 
     public void setMyViewModel(MyViewModel myViewModel) {
         this.myViewModel = myViewModel;
@@ -60,6 +65,8 @@ public class MyViewController implements Observer, IView {
     public void update(Observable o, Object arg) {
         if (o == myViewModel) {
             isGameOver = myViewModel.isGameOver();
+            if(isGameOver)
+                playMusic();
             if (arg != null && arg == "solution") {
                 mazeDisplayer.showSolution(myViewModel.getSolution());
             }
@@ -82,11 +89,11 @@ public class MyViewController implements Observer, IView {
         this.characterPositionRow.set(characterPositionRow + "");
         this.characterPositionColumn.set(characterPositionColumn + "");
         mazeDisplayer.setMaze(maze);
-
     }
 
     public void generateMaze() {
         haveMaze = true;
+        btn_solveMaze.setText("Solve Maze");
         String input_row = txtfld_rowsNum.getText();
         String input_col = txtfld_columnsNum.getText();
         try {
@@ -101,7 +108,8 @@ public class MyViewController implements Observer, IView {
                 myViewModel.generateMaze(rows, cols);
                 btn_solveMaze.setDisable(false);
                 mazeDisplayer.newMaze();
-                mazeDisplayer.platMusic();
+
+                playMusic();
             }
         } catch (Exception e) {
             showAlert("Please enter numbers.");
@@ -109,10 +117,32 @@ public class MyViewController implements Observer, IView {
 
     }
 
+    public void playMusic(){
+        String musicFile = "resources/sound/audio.mp3";
+        if(mediaPlayer != null)
+            mediaPlayer.stop();
+        if(isGameOver){
+            mediaPlayer.stop();
+            musicFile = "resources/sound/winning.mp3";
+        }
+        Media sound = new Media(new File(musicFile).toURI().toString());
+        mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        mediaPlayer.play();
+    }
+
     public void solveMaze(ActionEvent actionEvent) {
-        if (haveMaze && !isGameOver) {
+        if (haveMaze && !isGameOver && !showSolution) {
             myViewModel.solveMaze();
             showSolution = true;
+            btn_solveMaze.setText("Hide Solution");
+        }
+        else if (haveMaze && !isGameOver && showSolution){
+            showSolution = false;
+            btn_solveMaze.setText("Solve Maze");
+            myViewModel.hideSolution();
+            mazeDisplayer.cancelSolution();
+            mazeDisplayer.redraw();
         }
     }
 
@@ -122,12 +152,21 @@ public class MyViewController implements Observer, IView {
         alert.show();
     }
 
+    public void releaseCTRL(KeyEvent keyEvent){
+        if (keyEvent.isControlDown())
+            ctrlON = false;
+    }
+
     public void KeyPressed(KeyEvent keyEvent) {
-        if (haveMaze) {
+        if (keyEvent.isControlDown()){
+            ctrlON = true;
+        }
+        else if (haveMaze) {
             myViewModel.moveCharacter(keyEvent.getCode());
             keyEvent.consume();
         }
     }
+
 
     //region String Property for Binding
     public StringProperty characterPositionRow = new SimpleStringProperty();
@@ -234,7 +273,6 @@ public class MyViewController implements Observer, IView {
         scene.widthProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
-//                System.out.println("Width: " + newSceneWidth);
                 mazeDisplayer.redraw();
             }
         });
@@ -244,6 +282,13 @@ public class MyViewController implements Observer, IView {
                 mazeDisplayer.redraw();
             }
         });
+    }
+
+    //Zoom:
+    public void zoomScreen(ScrollEvent event){
+        if (ctrlON){
+            //Lielle: update zoom in and out!
+        }
     }
 
     public void Exit(ActionEvent actionEvent) {

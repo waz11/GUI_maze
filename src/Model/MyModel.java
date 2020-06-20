@@ -339,7 +339,9 @@ public class MyModel extends Observable implements IModel {
 
     }
 
-
+    public void hideSolution(){
+        this.solveMaze = false;
+    }
 }
 
 

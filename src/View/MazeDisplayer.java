@@ -40,16 +40,12 @@ public class MazeDisplayer extends Canvas {
 
     public void setMaze(Maze maze) {
         this.maze = maze;
-        rows = maze.getRows();
-        cols = maze.getCols();
-        canvasHeight = getHeight();
-        canvasWidth = getWidth();
-        y = canvasHeight / maze.getRows();
-        x = canvasWidth / maze.getCols();
+        setSizes();
         redraw();
     }
 
     public void redraw() {
+        setSizes();
         if (maze == null) return;
         drawMaze();
         if (showSolution)
@@ -58,12 +54,16 @@ public class MazeDisplayer extends Canvas {
         drawPlayer();
     }
 
-    public void platMusic(){
-//        String musicFile = "../resources/sound/audio.mp3";
-//        Media sound = new Media(new File(musicFile).toURI().toString());
-//        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-//        mediaPlayer.play();
+    public void setSizes(){
+        rows = maze.getRows();
+        cols = maze.getCols();
+        canvasHeight = getHeight();
+        canvasWidth = getWidth();
+        y = canvasHeight / maze.getRows();
+        x = canvasWidth / maze.getCols();
     }
+
+
 
 
 
