@@ -2,6 +2,9 @@ package View;
 
 import ViewModel.MyViewModel;
 import algorithms.mazeGenerators.Maze;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -10,6 +13,8 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Bounds;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -24,6 +29,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.nio.file.Paths;
@@ -287,8 +293,41 @@ public class MyViewController implements Observer, IView {
     //Zoom:
     public void zoomScreen(ScrollEvent event){
         if (ctrlON){
-            //Lielle: update zoom in and out!
+            double zoomScale;
+            if (event.isControlDown()) {
+                zoomScale = 1.5;
+                double deltaY = event.getDeltaY();
+                if(deltaY < 0){
+                    zoomScale = 1/ zoomScale;
+                }
+                zoom(mazeDisplayer, zoomScale, event.getSceneX(), event.getSceneY());
+                mazeDisplayer.setScaleX(mazeDisplayer.getScaleX() * zoomScale);
+                mazeDisplayer.setScaleY(mazeDisplayer.getScaleY() * zoomScale);
+                event.consume();
+            }
         }
+    }
+    private Timeline timeline = new Timeline(60);
+    public void zoom(Node node, double factor, double x, double y) {
+        // determine scale
+        double oldScale = node.getScaleX();
+        double scale = oldScale * factor;
+        double f = (scale / oldScale) - 1;
+
+        // determine offset that we will have to move the node
+        Bounds bounds = node.localToScene(node.getBoundsInLocal());
+        double dx = (x - (bounds.getWidth() / 2 + bounds.getMinX()));
+        double dy = (y - (bounds.getHeight() / 2 + bounds.getMinY()));
+
+        // timeline that scales and moves the node
+        timeline.getKeyFrames().clear();
+        timeline.getKeyFrames().addAll(
+                new KeyFrame(Duration.millis(200), new KeyValue(node.translateXProperty(), node.getTranslateX() - f * dx)),
+                new KeyFrame(Duration.millis(200), new KeyValue(node.translateYProperty(), node.getTranslateY() - f * dy)),
+                new KeyFrame(Duration.millis(200), new KeyValue(node.scaleXProperty(), scale)),
+                new KeyFrame(Duration.millis(200), new KeyValue(node.scaleYProperty(), scale))
+        );
+        timeline.play();
     }
 
     public void Exit(ActionEvent actionEvent) {

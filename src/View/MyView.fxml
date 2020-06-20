@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane onKeyPressed="#KeyPressed" onKeyReleased="#releaseCTRL" onScroll="#zoomScreen" stylesheets="View.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
+<BorderPane onKeyPressed="#KeyPressed" onKeyReleased="#releaseCTRL" onScroll="#zoomScreen"  xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
     <top>
         <VBox BorderPane.alignment="CENTER">
             <children>
@@ -104,9 +104,9 @@
 
     <center>
         <AnchorPane fx:id="mazePane" minHeight="200" minWidth="200" style="-fx-background-color: whitesmoke; -fx-border-color: black" BorderPane.alignment="CENTER">
-            <children>
-                <MazeDisplayer fx:id="mazeDisplayer" width="${mazePane.width}" height="${mazePane.height}" imageFileNameCharacter="resources/Images/player.png" imageFileNameGoal="resources/Images/goal.png" imageFileNameSolution="resources/Images/solution1.png" imageFileNameWall="resources/Images/border2.png" layoutY="5.0" onMouseClicked="#mouseClicked" style="-fx-border-color: black; -fx-border-width: 12px solid; -fx-background-color: white;">
-                    <effect>
+            <children >
+                <MazeDisplayer  fx:id="mazeDisplayer" width="${mazePane.width}" height="${mazePane.height}" imageFileNameCharacter="resources/Images/player.png" imageFileNameGoal="resources/Images/goal.png" imageFileNameSolution="resources/Images/solution1.png" imageFileNameWall="resources/Images/border2.png" layoutY="5.0" onMouseClicked="#mouseClicked" style="-fx-border-color: black; -fx-border-width: 12px solid; -fx-background-color: white;">
+                    <effect >
                         <Glow />
                     </effect>
                 </MazeDisplayer>

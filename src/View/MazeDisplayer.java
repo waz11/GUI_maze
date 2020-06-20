@@ -11,6 +11,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.paint.Color;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -40,7 +41,7 @@ public class MazeDisplayer extends Canvas {
 
     public void setMaze(Maze maze) {
         this.maze = maze;
-        setSizes();
+//        setSizes();
         redraw();
     }
 
@@ -61,6 +62,7 @@ public class MazeDisplayer extends Canvas {
         canvasWidth = getWidth();
         y = canvasHeight / maze.getRows();
         x = canvasWidth / maze.getCols();
+
     }
 
 
@@ -82,6 +84,10 @@ public class MazeDisplayer extends Canvas {
                 Position p = new Position(row, col);
                 if (maze.isWall(p))
                     gc.drawImage(wallImage, col * x, row * y, x, y);
+//                else{
+//                    gc.setFill(Color.BLUE);
+//                    gc.fillRect(col * x, row * y, x, y);
+//                }
             }
         }
     }
