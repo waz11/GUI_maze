@@ -30,6 +30,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.nio.file.Paths;
@@ -59,7 +61,9 @@ public class MyViewController implements Observer, IView {
     public boolean showSolution = false;
     public boolean ctrlON = false;
 
+
     public static int counter = 0;
+    private static final Logger LOG = LogManager.getLogger();
     private MediaPlayer mediaPlayer;
 
     public void setMyViewModel(MyViewModel myViewModel) {
@@ -107,6 +111,7 @@ public class MyViewController implements Observer, IView {
             int cols = Integer.parseInt(input_col);
             if (rows < 2 || cols < 2) {
                 showAlert("Please choose valid dimensions. (rows and columns bigger than 1)");
+                LOG.warn("Invalid input");
             } else {
                 btn_generateMaze.setDisable(true);
                 isGameOver = false;
@@ -120,6 +125,7 @@ public class MyViewController implements Observer, IView {
             }
         } catch (Exception e) {
             showAlert("Please enter numbers.");
+            LOG.warn("Invalid input");
         }
 
     }

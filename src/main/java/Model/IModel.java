@@ -13,7 +13,7 @@ import java.io.IOException;
  * Created by Aviadjo on 6/14/2017.
  */
 public interface IModel {
-    void generateMaze(int width, int height);
+    Maze generateMaze(int width, int height);
     void solveMaze();
     void moveCharacter(KeyCode movement);
     Maze getMaze();

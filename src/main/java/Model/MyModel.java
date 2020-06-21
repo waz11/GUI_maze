@@ -64,22 +64,7 @@ public class MyModel extends Observable implements IModel {
 
 
     @Override
-    public void generateMaze(int rows, int cols) {
-        threadPool.execute(() -> {
-            getMazeFromServer(rows, cols);
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-
-            }
-            solveMaze = false;
-            setChanged();
-            notifyObservers();
-        });
-    }
-
-
-    private Maze getMazeFromServer(int rows, int cols) {
+    public Maze generateMaze(int rows, int cols) {
         try {
             Client client = new Client(InetAddress.getLocalHost(), 5400, new IClientStrategy() {
                 public void clientStrategy(InputStream inFromServer, OutputStream outToServer) {
@@ -115,6 +100,8 @@ public class MyModel extends Observable implements IModel {
             });
             LOG.info("Client: "+client.toString()+" asked for a new maze.");
             client.communicateWithServer();
+            setChanged();
+            notifyObservers();
         } catch (UnknownHostException e) {
             LOG.error("Maze generation failed.");
         }
@@ -122,22 +109,10 @@ public class MyModel extends Observable implements IModel {
         return maze;
     }
 
-    public void solveMaze() {
-        threadPool.execute(() -> {
-            solveMazeServer();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-            }
-            solveMaze = true;
-            setChanged();
-            notifyObservers("solution");
-        });
-    }
 
     public Solution solution;
 
-    public void solveMazeServer() {
+    public void solveMaze() {
         try {
             Client client = new Client(InetAddress.getLocalHost(), 5401, new IClientStrategy() {
                 @Override
@@ -159,7 +134,9 @@ public class MyModel extends Observable implements IModel {
 
             LOG.info("Client: "+client.toString() + ", asked for a solution");
             client.communicateWithServer();
-
+            solveMaze = true;
+            setChanged();
+            notifyObservers("solution");
         } catch (UnknownHostException e) {
             LOG.error("Solving maze failed.");
         }
@@ -238,9 +215,10 @@ public class MyModel extends Observable implements IModel {
             if (player_row == maze.getGoalPosition().getRowIndex() && player_col == maze.getGoalPosition().getColumnIndex()){
                 isGameOver = true;
                 solveMaze = false;
+                LOG.info("Maze solved");
             }
             if (solveMaze && !isGameOver){
-                solveMazeServer();
+                solveMaze();
                 setChanged();
                 notifyObservers("solution");
             }
