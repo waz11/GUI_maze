@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5ded95cd-08b9-4368-ac02-4f1cf009a799" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/SavedMazes/maze_0" beforeDir="false" afterPath="$PROJECT_DIR$/SavedMazes/maze_0" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dXNNIrvFaNvvQ5pq23xSriAtpJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.09165901" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ATP - Project - PartC" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5ded95cd-08b9-4368-ac02-4f1cf009a799" name="Default Changelist" comment="" />
+      <created>1592567437018</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592567437018</updated>
+      <workItem from="1592567438453" duration="64000" />
+      <workItem from="1592578345482" duration="4276000" />
+      <workItem from="1592647601216" duration="686000" />
+      <workItem from="1592648393819" duration="7803000" />
+      <workItem from="1592681526016" duration="1527000" />
+      <workItem from="1592686016662" duration="646000" />
+      <workItem from="1592733962690" duration="4032000" />
+      <workItem from="1592750183676" duration="51000" />
+      <workItem from="1592762281000" duration="497000" />
+      <workItem from="1592762800119" duration="299000" />
+      <workItem from="1592763437657" duration="178000" />
+      <workItem from="1592763666514" duration="255000" />
+    </task>
+    <task id="LOCAL-00001" summary="sound adding">
+      <created>1592651452034</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592651452034</updated>
+    </task>
+    <task id="LOCAL-00002" summary="sound adding">
+      <created>1592658750674</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592658750674</updated>
+    </task>
+    <task id="LOCAL-00003" summary="sound adding">
+      <created>1592686242368</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592686242369</updated>
+    </task>
+    <task id="LOCAL-00004" summary="sound adding">
+      <created>1592736834180</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592736834180</updated>
+    </task>
+    <task id="LOCAL-00005" summary="sound adding">
+      <created>1592737768406</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592737768406</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="sound adding" />
+    <option name="LAST_COMMIT_MESSAGE" value="sound adding" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="163" y="0" key="#Project_Structure" timestamp="1592737693147">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1592737693147" />
+    <state x="313" y="52" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1592734094022">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="313" y="52" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1366.728@0.0.1366.728" timestamp="1592734094022" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1592763179882">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592763179882" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1592657061045">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592657061045" />
+    <state width="1323" height="172" key="GridCell.Tab.0.bottom" timestamp="1592763921449">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="172" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592763921449" />
+    <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592683057921" />
+    <state width="1323" height="172" key="GridCell.Tab.0.center" timestamp="1592763921449">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="172" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592763921449" />
+    <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592683057921" />
+    <state width="1323" height="172" key="GridCell.Tab.0.left" timestamp="1592763921448">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="172" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592763921448" />
+    <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592683057920" />
+    <state width="1323" height="172" key="GridCell.Tab.0.right" timestamp="1592763921449">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="172" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592763921449" />
+    <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592683057921" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1592763611982">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592763611982" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1592763185044">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592763185044" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1592681527383">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592681527383" />
+    <state x="65" y="0" key="new project wizard" timestamp="1592763566523">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1592763566523" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1592734452125">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1592734452125" />
+  </component>
+</project>

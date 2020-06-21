@@ -1,0 +1,444 @@
+2020.06.21 13:25:12.226 INFO  Model.MyModel - Servers are up
+2020.06.21 13:32:16.147 INFO  Model.MyModel - Servers are up
+2020.06.21 13:32:18.460 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 13:32:30.377 INFO  Model.MyModel - Servers are stopped
+2020.06.21 13:34:46.485 INFO  Model.MyModel - Servers are up
+2020.06.21 13:34:49.981 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 13:35:00.256 INFO  Model.MyModel - Generated algorithm: EmptyMazeGenerator
+2020.06.21 13:35:00.256 INFO  Model.MyModel - Solving algorithm: BestFirstSearch
+2020.06.21 13:35:02.980 INFO  Model.MyModel - Generated algorithm: EmptyMazeGenerator
+2020.06.21 13:35:02.981 INFO  Model.MyModel - Solving algorithm: DepthFirstSearch
+2020.06.21 13:38:11.965 INFO  Model.MyModel - Servers are up
+2020.06.21 13:38:14.249 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 13:38:16.081 INFO  Model.MyModel - Client: Client.Client@5f0adb9a, asked for a solution
+2020.06.21 13:38:28.630 INFO  Model.MyModel - Generated algorithm: MyMazeGenerator
+2020.06.21 13:38:28.630 INFO  Model.MyModel - Solving algorithm: BestFirstSearch
+2020.06.21 13:38:31.435 INFO  Model.MyModel - Client: Client.Client@15c1f4c6, asked for a solution
+2020.06.21 13:38:34.095 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 13:38:39.186 INFO  Model.MyModel - Client: Client.Client@38afd454, asked for a solution
+2020.06.21 13:38:42.199 INFO  Model.MyModel - Client: Client.Client@27df3bbe, asked for a solution
+2020.06.21 13:38:42.910 INFO  Model.MyModel - Client: Client.Client@4daff454, asked for a solution
+2020.06.21 13:38:43.563 INFO  Model.MyModel - Client: Client.Client@5cbbb03e, asked for a solution
+2020.06.21 13:38:44.094 INFO  Model.MyModel - Client: Client.Client@6e3e01ba, asked for a solution
+2020.06.21 13:38:44.627 INFO  Model.MyModel - Client: Client.Client@30b47bff, asked for a solution
+2020.06.21 13:43:19.782 INFO  Model.MyModel - Servers are up
+2020.06.21 13:43:47.151 INFO  Model.MyModel - Servers are up
+2020.06.21 13:43:49.859 INFO  Model.MyModel - Client: Client.Client@307b60f0 asked for a new maze.
+2020.06.21 13:43:49.876 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 13:44:14.337 INFO  Model.MyModel - Servers are up
+2020.06.21 13:45:45.581 INFO  Model.MyModel - Servers are up
+2020.06.21 13:47:12.818 INFO  Model.MyModel - Servers are up
+2020.06.21 13:47:21.206 INFO  Model.MyModel - Client: Client.Client@1226ba82 asked for a new maze.
+2020.06.21 13:47:21.221 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 13:47:23.107 INFO  Model.MyModel - Client: Client.Client@730a71db asked for a new maze.
+2020.06.21 13:47:23.111 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 13:47:24.895 INFO  Model.MyModel - Client: Client.Client@4a01677c asked for a new maze.
+2020.06.21 13:47:24.899 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 13:47:28.833 INFO  Model.MyModel - Client: Client.Client@36838926 asked for a new maze.
+2020.06.21 13:47:28.882 INFO  Model.MyModel - Maze generated: 1000 rows and 10 cols
+2020.06.21 13:47:35.356 INFO  Model.MyModel - Client: Client.Client@4f136d7c asked for a new maze.
+2020.06.21 13:47:35.358 INFO  Model.MyModel - Maze generated: 5 rows and 10 cols
+2020.06.21 13:47:36.078 INFO  Model.MyModel - Client: Client.Client@42b63772, asked for a solution
+2020.06.21 13:47:36.781 INFO  Model.MyModel - Client: Client.Client@6ddf6b7f asked for a new maze.
+2020.06.21 13:47:36.783 INFO  Model.MyModel - Maze generated: 5 rows and 10 cols
+2020.06.21 13:47:37.259 INFO  Model.MyModel - Client: Client.Client@1464bd36, asked for a solution
+2020.06.21 13:47:37.897 INFO  Model.MyModel - Client: Client.Client@4a2410a4 asked for a new maze.
+2020.06.21 13:47:37.899 INFO  Model.MyModel - Maze generated: 5 rows and 10 cols
+2020.06.21 13:47:38.321 INFO  Model.MyModel - Client: Client.Client@63737ad1, asked for a solution
+2020.06.21 13:47:38.740 INFO  Model.MyModel - Client: Client.Client@51d61e4e, asked for a solution
+2020.06.21 13:47:53.296 INFO  Model.MyModel - Client: Client.Client@8efaace, asked for a solution
+2020.06.21 13:48:08.055 INFO  Model.MyModel - Client: Client.Client@7706258e asked for a new maze.
+2020.06.21 13:48:08.057 INFO  Model.MyModel - Maze generated: 5 rows and 10 cols
+2020.06.21 13:48:11.657 INFO  Model.MyModel - Client: Client.Client@68947362, asked for a solution
+2020.06.21 13:53:04.993 INFO  Model.MyModel - Servers are up
+2020.06.21 13:53:07.789 INFO  Model.MyModel - Client: Client.Client@3e7efcfb asked for a new maze.
+2020.06.21 13:53:07.806 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 13:58:27.580 INFO  Model.MyModel - Servers are up
+2020.06.21 13:58:34.200 WARN  View.MyViewController - Invalid input
+2020.06.21 14:02:24.271 INFO  Model.MyModel - Servers are up
+2020.06.21 14:02:27.786 INFO  Model.MyModel - Client: Client.Client@67c3a906 asked for a new maze.
+2020.06.21 14:02:27.799 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:02:39.159 INFO  Model.MyModel - Client: Client.Client@7a95046e, asked for a solution
+2020.06.21 14:02:40.972 INFO  Model.MyModel - Client: Client.Client@2a6ceb41, asked for a solution
+2020.06.21 14:02:41.223 INFO  Model.MyModel - Client: Client.Client@6d03aa82, asked for a solution
+2020.06.21 14:02:41.407 INFO  Model.MyModel - Client: Client.Client@5a19f93a, asked for a solution
+2020.06.21 14:02:41.595 INFO  Model.MyModel - Client: Client.Client@416c8912, asked for a solution
+2020.06.21 14:02:41.784 INFO  Model.MyModel - Client: Client.Client@53b59159, asked for a solution
+2020.06.21 14:02:42.033 INFO  Model.MyModel - Client: Client.Client@389da32d, asked for a solution
+2020.06.21 14:02:42.221 INFO  Model.MyModel - Client: Client.Client@3571d311, asked for a solution
+2020.06.21 14:02:43.096 INFO  Model.MyModel - Client: Client.Client@4a4799c5, asked for a solution
+2020.06.21 14:02:43.348 INFO  Model.MyModel - Client: Client.Client@7ca3dab5, asked for a solution
+2020.06.21 14:02:43.533 INFO  Model.MyModel - Client: Client.Client@74a220bb, asked for a solution
+2020.06.21 14:02:43.721 INFO  Model.MyModel - Client: Client.Client@36c4a630, asked for a solution
+2020.06.21 14:02:43.910 INFO  Model.MyModel - Client: Client.Client@48026b30, asked for a solution
+2020.06.21 14:02:44.034 INFO  Model.MyModel - Client: Client.Client@534aad1b, asked for a solution
+2020.06.21 14:02:44.284 INFO  Model.MyModel - Client: Client.Client@35ac1a5b, asked for a solution
+2020.06.21 14:02:44.472 INFO  Model.MyModel - Client: Client.Client@24b5d5bc, asked for a solution
+2020.06.21 14:02:44.659 INFO  Model.MyModel - Client: Client.Client@75c9824d, asked for a solution
+2020.06.21 14:02:44.848 INFO  Model.MyModel - Client: Client.Client@76a6e2cc, asked for a solution
+2020.06.21 14:02:45.036 INFO  Model.MyModel - Client: Client.Client@5c775bea, asked for a solution
+2020.06.21 14:04:02.743 INFO  Model.MyModel - Servers are up
+2020.06.21 14:04:06.052 INFO  Model.MyModel - Client: Client.Client@fb2cb5c asked for a new maze.
+2020.06.21 14:04:06.065 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:04:20.989 INFO  Model.MyModel - Maze solved
+2020.06.21 14:04:25.181 INFO  Model.MyModel - Servers are stopped
+2020.06.21 14:10:18.177 INFO  Model.MyModel - Servers are up
+2020.06.21 14:10:21.117 INFO  Model.MyModel - Client: Client.Client@7e2d3759 asked for a new maze.
+2020.06.21 14:10:21.132 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:29.552 INFO  Model.MyModel - Maze solved
+2020.06.21 14:10:31.716 INFO  Model.MyModel - Client: Client.Client@1c5b6a7 asked for a new maze.
+2020.06.21 14:10:31.720 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:33.454 INFO  Model.MyModel - Client: Client.Client@6b13792a, asked for a solution
+2020.06.21 14:10:34.157 INFO  Model.MyModel - Client: Client.Client@d53da4b, asked for a solution
+2020.06.21 14:10:34.372 INFO  Model.MyModel - Client: Client.Client@46a7f120, asked for a solution
+2020.06.21 14:10:34.503 INFO  Model.MyModel - Client: Client.Client@cf58e4a, asked for a solution
+2020.06.21 14:10:36.463 INFO  Model.MyModel - Client: Client.Client@46cc08d3, asked for a solution
+2020.06.21 14:10:37.123 INFO  Model.MyModel - Client: Client.Client@4df58c7e, asked for a solution
+2020.06.21 14:10:37.499 INFO  Model.MyModel - Client: Client.Client@3f101dc6, asked for a solution
+2020.06.21 14:10:37.857 INFO  Model.MyModel - Client: Client.Client@5b1be840, asked for a solution
+2020.06.21 14:10:38.224 INFO  Model.MyModel - Client: Client.Client@1ee42962, asked for a solution
+2020.06.21 14:10:38.520 INFO  Model.MyModel - Client: Client.Client@271ba704, asked for a solution
+2020.06.21 14:10:38.847 INFO  Model.MyModel - Client: Client.Client@32e8c2fb, asked for a solution
+2020.06.21 14:10:39.516 INFO  Model.MyModel - Client: Client.Client@75a8537d, asked for a solution
+2020.06.21 14:10:39.677 INFO  Model.MyModel - Client: Client.Client@4318762b, asked for a solution
+2020.06.21 14:10:41.154 INFO  Model.MyModel - Client: Client.Client@eb12720 asked for a new maze.
+2020.06.21 14:10:41.157 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:41.977 INFO  Model.MyModel - Client: Client.Client@4f1f4bc0 asked for a new maze.
+2020.06.21 14:10:41.980 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:42.374 INFO  Model.MyModel - Client: Client.Client@73cb656d asked for a new maze.
+2020.06.21 14:10:42.377 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:42.534 INFO  Model.MyModel - Client: Client.Client@5ec36034 asked for a new maze.
+2020.06.21 14:10:42.537 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:42.695 INFO  Model.MyModel - Client: Client.Client@641636b7 asked for a new maze.
+2020.06.21 14:10:42.698 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:42.838 INFO  Model.MyModel - Client: Client.Client@23fe9cde asked for a new maze.
+2020.06.21 14:10:42.840 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:44.386 INFO  Model.MyModel - Client: Client.Client@126c7267 asked for a new maze.
+2020.06.21 14:10:44.389 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:44.516 INFO  Model.MyModel - Client: Client.Client@19f028c0 asked for a new maze.
+2020.06.21 14:10:44.519 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:45.767 INFO  Model.MyModel - Client: Client.Client@4a977eb9, asked for a solution
+2020.06.21 14:10:46.071 INFO  Model.MyModel - Client: Client.Client@6e233018, asked for a solution
+2020.06.21 14:10:46.355 INFO  Model.MyModel - Client: Client.Client@7a6c7234, asked for a solution
+2020.06.21 14:10:46.655 INFO  Model.MyModel - Client: Client.Client@19fa5a06, asked for a solution
+2020.06.21 14:10:46.927 INFO  Model.MyModel - Client: Client.Client@75682714, asked for a solution
+2020.06.21 14:10:48.033 INFO  Model.MyModel - Client: Client.Client@1778d6d9, asked for a solution
+2020.06.21 14:10:48.380 INFO  Model.MyModel - Client: Client.Client@54a1067e asked for a new maze.
+2020.06.21 14:10:48.382 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:48.506 INFO  Model.MyModel - Client: Client.Client@3869b9a0, asked for a solution
+2020.06.21 14:10:48.574 INFO  Model.MyModel - Client: Client.Client@598de4d8 asked for a new maze.
+2020.06.21 14:10:48.576 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:48.623 INFO  Model.MyModel - Client: Client.Client@50b1739, asked for a solution
+2020.06.21 14:10:48.684 INFO  Model.MyModel - Client: Client.Client@6dc83bf6 asked for a new maze.
+2020.06.21 14:10:48.688 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:48.806 INFO  Model.MyModel - Client: Client.Client@4d590334, asked for a solution
+2020.06.21 14:10:48.884 INFO  Model.MyModel - Client: Client.Client@b6e5bac, asked for a solution
+2020.06.21 14:10:48.928 INFO  Model.MyModel - Client: Client.Client@48cb9449, asked for a solution
+2020.06.21 14:10:49.141 INFO  Model.MyModel - Client: Client.Client@72888c69 asked for a new maze.
+2020.06.21 14:10:49.143 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:49.275 INFO  Model.MyModel - Client: Client.Client@549f1137 asked for a new maze.
+2020.06.21 14:10:49.278 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:49.730 INFO  Model.MyModel - Client: Client.Client@e38c33b asked for a new maze.
+2020.06.21 14:10:49.732 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:50.197 INFO  Model.MyModel - Client: Client.Client@d9fbeab, asked for a solution
+2020.06.21 14:10:50.236 INFO  Model.MyModel - Client: Client.Client@714f637d, asked for a solution
+2020.06.21 14:10:50.303 INFO  Model.MyModel - Client: Client.Client@2aa31fa9, asked for a solution
+2020.06.21 14:10:50.367 INFO  Model.MyModel - Client: Client.Client@1a6fe369, asked for a solution
+2020.06.21 14:10:50.481 INFO  Model.MyModel - Client: Client.Client@161af778, asked for a solution
+2020.06.21 14:10:50.513 INFO  Model.MyModel - Client: Client.Client@78ba1b36, asked for a solution
+2020.06.21 14:10:50.653 INFO  Model.MyModel - Client: Client.Client@73974d7f asked for a new maze.
+2020.06.21 14:10:50.655 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:50.805 INFO  Model.MyModel - Client: Client.Client@481a7839, asked for a solution
+2020.06.21 14:10:50.866 INFO  Model.MyModel - Client: Client.Client@1f56a8e5, asked for a solution
+2020.06.21 14:10:50.922 INFO  Model.MyModel - Client: Client.Client@18c95449, asked for a solution
+2020.06.21 14:10:50.987 INFO  Model.MyModel - Client: Client.Client@4548e0f5 asked for a new maze.
+2020.06.21 14:10:50.989 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:51.022 INFO  Model.MyModel - Client: Client.Client@2c19dc08, asked for a solution
+2020.06.21 14:10:51.094 INFO  Model.MyModel - Client: Client.Client@58a4f22c, asked for a solution
+2020.06.21 14:10:51.157 INFO  Model.MyModel - Client: Client.Client@1852c492 asked for a new maze.
+2020.06.21 14:10:51.161 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:51.281 INFO  Model.MyModel - Client: Client.Client@6bbab277, asked for a solution
+2020.06.21 14:10:51.367 INFO  Model.MyModel - Client: Client.Client@5844066, asked for a solution
+2020.06.21 14:10:51.425 INFO  Model.MyModel - Client: Client.Client@1e3215d6, asked for a solution
+2020.06.21 14:10:51.493 INFO  Model.MyModel - Client: Client.Client@d72579b, asked for a solution
+2020.06.21 14:10:51.572 INFO  Model.MyModel - Client: Client.Client@65ae5646, asked for a solution
+2020.06.21 14:10:51.630 INFO  Model.MyModel - Client: Client.Client@6746b910, asked for a solution
+2020.06.21 14:10:51.692 INFO  Model.MyModel - Client: Client.Client@2d1963fe, asked for a solution
+2020.06.21 14:10:51.759 INFO  Model.MyModel - Client: Client.Client@6aa78064, asked for a solution
+2020.06.21 14:10:51.820 INFO  Model.MyModel - Client: Client.Client@3b3f1418, asked for a solution
+2020.06.21 14:10:51.884 INFO  Model.MyModel - Client: Client.Client@5faac3ba, asked for a solution
+2020.06.21 14:10:51.947 INFO  Model.MyModel - Client: Client.Client@ba99713, asked for a solution
+2020.06.21 14:10:52.006 INFO  Model.MyModel - Client: Client.Client@72542395, asked for a solution
+2020.06.21 14:10:52.068 INFO  Model.MyModel - Client: Client.Client@14062d7f asked for a new maze.
+2020.06.21 14:10:52.071 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:52.211 INFO  Model.MyModel - Client: Client.Client@24ac8718, asked for a solution
+2020.06.21 14:10:52.272 INFO  Model.MyModel - Client: Client.Client@ed9bd54 asked for a new maze.
+2020.06.21 14:10:52.276 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:52.409 INFO  Model.MyModel - Client: Client.Client@172312a6, asked for a solution
+2020.06.21 14:10:52.512 INFO  Model.MyModel - Client: Client.Client@561edff9, asked for a solution
+2020.06.21 14:10:52.577 INFO  Model.MyModel - Client: Client.Client@724f3ae1, asked for a solution
+2020.06.21 14:10:52.617 INFO  Model.MyModel - Client: Client.Client@68a8b768, asked for a solution
+2020.06.21 14:10:52.692 INFO  Model.MyModel - Client: Client.Client@22d4c413, asked for a solution
+2020.06.21 14:10:52.755 INFO  Model.MyModel - Client: Client.Client@38a281cc, asked for a solution
+2020.06.21 14:10:54.156 INFO  Model.MyModel - Client: Client.Client@222dec35 asked for a new maze.
+2020.06.21 14:10:54.157 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:55.187 INFO  Model.MyModel - Client: Client.Client@47281951, asked for a solution
+2020.06.21 14:10:55.600 INFO  Model.MyModel - Client: Client.Client@54367804, asked for a solution
+2020.06.21 14:10:55.695 INFO  Model.MyModel - Client: Client.Client@68ac56e7 asked for a new maze.
+2020.06.21 14:10:55.697 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:56.321 INFO  Model.MyModel - Client: Client.Client@8336b66, asked for a solution
+2020.06.21 14:10:57.057 INFO  Model.MyModel - Client: Client.Client@1f1fb030 asked for a new maze.
+2020.06.21 14:10:57.065 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:57.400 INFO  Model.MyModel - Client: Client.Client@c42ef01, asked for a solution
+2020.06.21 14:10:58.009 INFO  Model.MyModel - Client: Client.Client@5a3a09c9 asked for a new maze.
+2020.06.21 14:10:58.011 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:58.313 INFO  Model.MyModel - Client: Client.Client@59dbfa42, asked for a solution
+2020.06.21 14:10:59.037 INFO  Model.MyModel - Client: Client.Client@767865ed asked for a new maze.
+2020.06.21 14:10:59.039 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:10:59.582 INFO  Model.MyModel - Client: Client.Client@4101ca39, asked for a solution
+2020.06.21 14:11:00.226 INFO  Model.MyModel - Client: Client.Client@38fb8feb asked for a new maze.
+2020.06.21 14:11:00.228 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:00.894 INFO  Model.MyModel - Client: Client.Client@73e6bd05, asked for a solution
+2020.06.21 14:11:02.003 INFO  Model.MyModel - Client: Client.Client@4019351c asked for a new maze.
+2020.06.21 14:11:02.005 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:02.883 INFO  Model.MyModel - Client: Client.Client@4e1a9d44 asked for a new maze.
+2020.06.21 14:11:02.885 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:03.427 INFO  Model.MyModel - Client: Client.Client@26a86ed9, asked for a solution
+2020.06.21 14:11:03.920 INFO  Model.MyModel - Client: Client.Client@55510c50 asked for a new maze.
+2020.06.21 14:11:03.922 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:04.196 INFO  Model.MyModel - Client: Client.Client@5beb9e24, asked for a solution
+2020.06.21 14:11:04.805 INFO  Model.MyModel - Client: Client.Client@9660775 asked for a new maze.
+2020.06.21 14:11:04.807 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:05.292 INFO  Model.MyModel - Client: Client.Client@95b3760, asked for a solution
+2020.06.21 14:11:06.013 INFO  Model.MyModel - Client: Client.Client@10a82826 asked for a new maze.
+2020.06.21 14:11:06.015 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:06.605 INFO  Model.MyModel - Client: Client.Client@1cb510b8, asked for a solution
+2020.06.21 14:11:08.082 INFO  Model.MyModel - Client: Client.Client@128269af asked for a new maze.
+2020.06.21 14:11:08.084 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:09.718 INFO  Model.MyModel - Client: Client.Client@29b44a44, asked for a solution
+2020.06.21 14:11:11.118 INFO  Model.MyModel - Client: Client.Client@44f0a891, asked for a solution
+2020.06.21 14:11:11.451 INFO  Model.MyModel - Client: Client.Client@2e178521 asked for a new maze.
+2020.06.21 14:11:11.452 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:12.584 INFO  Model.MyModel - Client: Client.Client@7eb4cff0 asked for a new maze.
+2020.06.21 14:11:12.586 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:13.244 INFO  Model.MyModel - Client: Client.Client@60ca1079, asked for a solution
+2020.06.21 14:11:13.748 INFO  Model.MyModel - Client: Client.Client@17fad916 asked for a new maze.
+2020.06.21 14:11:13.750 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:14.200 INFO  Model.MyModel - Client: Client.Client@5250fc49, asked for a solution
+2020.06.21 14:11:14.749 INFO  Model.MyModel - Client: Client.Client@7c210579 asked for a new maze.
+2020.06.21 14:11:14.751 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:15.241 INFO  Model.MyModel - Client: Client.Client@4293deca, asked for a solution
+2020.06.21 14:11:15.885 INFO  Model.MyModel - Client: Client.Client@7814ba02 asked for a new maze.
+2020.06.21 14:11:15.887 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:16.463 INFO  Model.MyModel - Client: Client.Client@7efa8ae5, asked for a solution
+2020.06.21 14:11:17.026 INFO  Model.MyModel - Client: Client.Client@1ba44fce asked for a new maze.
+2020.06.21 14:11:17.028 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:17.527 INFO  Model.MyModel - Client: Client.Client@7d11bc9, asked for a solution
+2020.06.21 14:11:18.095 INFO  Model.MyModel - Client: Client.Client@28f222ef asked for a new maze.
+2020.06.21 14:11:18.096 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:19.623 INFO  Model.MyModel - Client: Client.Client@41538d8d asked for a new maze.
+2020.06.21 14:11:19.624 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:20.335 INFO  Model.MyModel - Client: Client.Client@363f8d7e asked for a new maze.
+2020.06.21 14:11:20.337 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:21.228 INFO  Model.MyModel - Client: Client.Client@5b1ed4d0, asked for a solution
+2020.06.21 14:11:21.697 INFO  Model.MyModel - Client: Client.Client@1cc87385 asked for a new maze.
+2020.06.21 14:11:21.698 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:22.436 INFO  Model.MyModel - Client: Client.Client@3347cdf5, asked for a solution
+2020.06.21 14:11:32.555 INFO  Model.MyModel - Client: Client.Client@48246ee4 asked for a new maze.
+2020.06.21 14:11:32.557 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:37.727 INFO  Model.MyModel - Client: Client.Client@4c51057d, asked for a solution
+2020.06.21 14:11:45.131 INFO  Model.MyModel - Servers are up
+2020.06.21 14:11:47.182 INFO  Model.MyModel - Client: Client.Client@64297392 asked for a new maze.
+2020.06.21 14:11:47.195 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:47.933 INFO  Model.MyModel - Client: Client.Client@7c0ab4bc, asked for a solution
+2020.06.21 14:11:48.654 INFO  Model.MyModel - Client: Client.Client@54b8c6c6 asked for a new maze.
+2020.06.21 14:11:48.657 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:49.887 INFO  Model.MyModel - Client: Client.Client@36a0fab2, asked for a solution
+2020.06.21 14:11:52.743 INFO  Model.MyModel - Client: Client.Client@66c8b308, asked for a solution
+2020.06.21 14:11:53.311 INFO  Model.MyModel - Client: Client.Client@7421f51a asked for a new maze.
+2020.06.21 14:11:53.314 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:55.712 INFO  Model.MyModel - Client: Client.Client@6d636af7, asked for a solution
+2020.06.21 14:11:56.789 INFO  Model.MyModel - Client: Client.Client@1cc927f0 asked for a new maze.
+2020.06.21 14:11:56.793 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:11:58.365 INFO  Model.MyModel - Client: Client.Client@369d7f85, asked for a solution
+2020.06.21 14:12:40.530 INFO  Model.MyModel - Client: Client.Client@9e4fa9a asked for a new maze.
+2020.06.21 14:12:40.533 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:12:43.947 INFO  Model.MyModel - Client: Client.Client@4b4ce3c3 asked for a new maze.
+2020.06.21 14:12:43.950 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:12:44.687 INFO  Model.MyModel - Client: Client.Client@30dbc0ec asked for a new maze.
+2020.06.21 14:12:44.689 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:12:45.336 INFO  Model.MyModel - Client: Client.Client@342822b6 asked for a new maze.
+2020.06.21 14:12:45.338 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:12:46.126 INFO  Model.MyModel - Client: Client.Client@74384cee, asked for a solution
+2020.06.21 14:12:46.652 INFO  Model.MyModel - Client: Client.Client@6779411 asked for a new maze.
+2020.06.21 14:12:46.655 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:12:49.491 INFO  Model.MyModel - Client: Client.Client@732e66b0 asked for a new maze.
+2020.06.21 14:12:49.494 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 14:12:50.338 INFO  Model.MyModel - Client: Client.Client@c50516b, asked for a solution
+2020.06.21 14:12:52.288 INFO  Model.MyModel - Client: Client.Client@6f48d4cd asked for a new maze.
+2020.06.21 14:12:52.291 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 17:36:50.389 INFO  Model.MyModel - Servers are up
+2020.06.21 17:36:52.557 INFO  Model.MyModel - Client: Client.Client@5ab2304 asked for a new maze.
+2020.06.21 17:36:52.574 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 20:58:34.262 INFO  Model.MyModel - Servers are up
+2020.06.21 20:58:55.596 INFO  Model.MyModel - Client: Client.Client@7065da7e asked for a new maze.
+2020.06.21 20:58:55.615 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 20:59:02.760 INFO  Model.MyModel - Maze solved
+2020.06.21 20:59:07.385 INFO  Model.MyModel - Client: Client.Client@53b6ec84 asked for a new maze.
+2020.06.21 20:59:07.388 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:00:27.634 INFO  Model.MyModel - Servers are up
+2020.06.21 21:00:30.005 INFO  Model.MyModel - Client: Client.Client@6272b9b3 asked for a new maze.
+2020.06.21 21:00:30.019 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:00:32.143 INFO  Model.MyModel - Client: Client.Client@3230ec64, asked for a solution
+2020.06.21 21:00:35.679 INFO  Model.MyModel - Client: Client.Client@23982658 asked for a new maze.
+2020.06.21 21:00:35.685 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:00:38.007 INFO  Model.MyModel - Client: Client.Client@1280f012, asked for a solution
+2020.06.21 21:00:39.288 INFO  Model.MyModel - Client: Client.Client@3816ae92 asked for a new maze.
+2020.06.21 21:00:39.291 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:00:40.472 INFO  Model.MyModel - Client: Client.Client@19a66945, asked for a solution
+2020.06.21 21:00:41.972 INFO  Model.MyModel - Client: Client.Client@fcf5d14, asked for a solution
+2020.06.21 21:00:42.127 INFO  Model.MyModel - Client: Client.Client@29c19fbb, asked for a solution
+2020.06.21 21:00:42.295 INFO  Model.MyModel - Client: Client.Client@5a792d8d, asked for a solution
+2020.06.21 21:00:42.478 INFO  Model.MyModel - Client: Client.Client@112607b4, asked for a solution
+2020.06.21 21:00:42.657 INFO  Model.MyModel - Client: Client.Client@df7bd39, asked for a solution
+2020.06.21 21:00:42.780 INFO  Model.MyModel - Client: Client.Client@5961b237, asked for a solution
+2020.06.21 21:00:42.948 INFO  Model.MyModel - Client: Client.Client@342822b6, asked for a solution
+2020.06.21 21:00:43.152 INFO  Model.MyModel - Client: Client.Client@5b164cfd, asked for a solution
+2020.06.21 21:00:43.570 INFO  Model.MyModel - Client: Client.Client@16894878, asked for a solution
+2020.06.21 21:00:43.871 INFO  Model.MyModel - Client: Client.Client@119f7780, asked for a solution
+2020.06.21 21:00:44.723 INFO  Model.MyModel - Client: Client.Client@d3d977a, asked for a solution
+2020.06.21 21:00:45.529 INFO  Model.MyModel - Client: Client.Client@c50516b, asked for a solution
+2020.06.21 21:00:46.223 INFO  Model.MyModel - Client: Client.Client@4093f6ea, asked for a solution
+2020.06.21 21:00:46.381 INFO  Model.MyModel - Client: Client.Client@61491e17, asked for a solution
+2020.06.21 21:00:46.631 INFO  Model.MyModel - Client: Client.Client@a103693, asked for a solution
+2020.06.21 21:00:46.764 INFO  Model.MyModel - Client: Client.Client@390dac9a, asked for a solution
+2020.06.21 21:00:47.126 INFO  Model.MyModel - Client: Client.Client@30e134fa, asked for a solution
+2020.06.21 21:00:47.294 INFO  Model.MyModel - Client: Client.Client@1023302c, asked for a solution
+2020.06.21 21:00:49.590 INFO  Model.MyModel - Client: Client.Client@f9f48ba, asked for a solution
+2020.06.21 21:00:49.722 INFO  Model.MyModel - Client: Client.Client@44f54278, asked for a solution
+2020.06.21 21:00:49.896 INFO  Model.MyModel - Client: Client.Client@51dce5a1, asked for a solution
+2020.06.21 21:00:50.085 INFO  Model.MyModel - Client: Client.Client@2c8391b7, asked for a solution
+2020.06.21 21:00:50.554 INFO  Model.MyModel - Client: Client.Client@7a9e08f5, asked for a solution
+2020.06.21 21:00:50.662 INFO  Model.MyModel - Client: Client.Client@67618b7, asked for a solution
+2020.06.21 21:00:50.824 INFO  Model.MyModel - Client: Client.Client@1a35bd7e, asked for a solution
+2020.06.21 21:00:50.967 INFO  Model.MyModel - Client: Client.Client@49229925, asked for a solution
+2020.06.21 21:00:51.136 INFO  Model.MyModel - Client: Client.Client@5d61cb2f, asked for a solution
+2020.06.21 21:00:51.263 INFO  Model.MyModel - Client: Client.Client@67bec91b, asked for a solution
+2020.06.21 21:00:51.396 INFO  Model.MyModel - Client: Client.Client@363f6c19, asked for a solution
+2020.06.21 21:00:51.707 INFO  Model.MyModel - Client: Client.Client@48d7db38, asked for a solution
+2020.06.21 21:00:51.895 INFO  Model.MyModel - Client: Client.Client@598b13c7, asked for a solution
+2020.06.21 21:00:52.079 INFO  Model.MyModel - Client: Client.Client@7c0e1f80, asked for a solution
+2020.06.21 21:00:52.233 INFO  Model.MyModel - Client: Client.Client@513e3e6b, asked for a solution
+2020.06.21 21:00:52.365 INFO  Model.MyModel - Client: Client.Client@531b1886, asked for a solution
+2020.06.21 21:00:52.513 INFO  Model.MyModel - Client: Client.Client@726594b1, asked for a solution
+2020.06.21 21:00:52.645 INFO  Model.MyModel - Client: Client.Client@abf3d1b, asked for a solution
+2020.06.21 21:00:52.793 INFO  Model.MyModel - Client: Client.Client@16ac8e2d, asked for a solution
+2020.06.21 21:00:52.931 INFO  Model.MyModel - Client: Client.Client@5ed6121c, asked for a solution
+2020.06.21 21:00:53.063 INFO  Model.MyModel - Client: Client.Client@2d51a760, asked for a solution
+2020.06.21 21:00:53.324 INFO  Model.MyModel - Client: Client.Client@6545c016, asked for a solution
+2020.06.21 21:00:53.533 INFO  Model.MyModel - Client: Client.Client@b2bffc7, asked for a solution
+2020.06.21 21:00:53.685 INFO  Model.MyModel - Client: Client.Client@74e8caa2, asked for a solution
+2020.06.21 21:00:53.798 INFO  Model.MyModel - Client: Client.Client@9d8bb1a, asked for a solution
+2020.06.21 21:00:53.931 INFO  Model.MyModel - Client: Client.Client@4774ccf3, asked for a solution
+2020.06.21 21:00:54.324 INFO  Model.MyModel - Client: Client.Client@2cd16fd1, asked for a solution
+2020.06.21 21:00:54.487 INFO  Model.MyModel - Client: Client.Client@7b9858e5, asked for a solution
+2020.06.21 21:00:54.711 INFO  Model.MyModel - Client: Client.Client@4a3bc061, asked for a solution
+2020.06.21 21:00:54.885 INFO  Model.MyModel - Client: Client.Client@17ed07c, asked for a solution
+2020.06.21 21:00:55.022 INFO  Model.MyModel - Client: Client.Client@1461cab, asked for a solution
+2020.06.21 21:00:55.160 INFO  Model.MyModel - Client: Client.Client@247114c6, asked for a solution
+2020.06.21 21:00:55.298 INFO  Model.MyModel - Client: Client.Client@fbf264b, asked for a solution
+2020.06.21 21:00:55.614 INFO  Model.MyModel - Client: Client.Client@7ad4dfbb, asked for a solution
+2020.06.21 21:06:03.058 INFO  Model.MyModel - Servers are up
+2020.06.21 21:06:05.945 INFO  Model.MyModel - Client: Client.Client@6ecd5210 asked for a new maze.
+2020.06.21 21:06:05.959 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:07:13.450 INFO  Model.MyModel - Servers are up
+2020.06.21 21:07:16.347 INFO  Model.MyModel - Client: Client.Client@1c93de31 asked for a new maze.
+2020.06.21 21:07:16.360 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:08:01.698 INFO  Model.MyModel - Servers are up
+2020.06.21 21:08:04.601 INFO  Model.MyModel - Client: Client.Client@fb2cb5c asked for a new maze.
+2020.06.21 21:08:04.625 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:08:09.846 INFO  Model.MyModel - Client: Client.Client@1c6afa4f, asked for a solution
+2020.06.21 21:08:10.901 INFO  Model.MyModel - Client: Client.Client@70c73635, asked for a solution
+2020.06.21 21:08:11.093 INFO  Model.MyModel - Client: Client.Client@687e4ceb, asked for a solution
+2020.06.21 21:08:11.333 INFO  Model.MyModel - Client: Client.Client@6ec44a2b, asked for a solution
+2020.06.21 21:08:11.527 INFO  Model.MyModel - Client: Client.Client@a9ec7fa, asked for a solution
+2020.06.21 21:08:11.808 INFO  Model.MyModel - Client: Client.Client@65d7acba, asked for a solution
+2020.06.21 21:08:11.971 INFO  Model.MyModel - Client: Client.Client@1f010f7, asked for a solution
+2020.06.21 21:08:12.144 INFO  Model.MyModel - Client: Client.Client@1293b0b1, asked for a solution
+2020.06.21 21:08:12.803 INFO  Model.MyModel - Client: Client.Client@1c8cdd6d asked for a new maze.
+2020.06.21 21:08:12.808 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:08:13.750 INFO  Model.MyModel - Client: Client.Client@52f159a4, asked for a solution
+2020.06.21 21:08:23.753 INFO  Model.MyModel - Client: Client.Client@23d30b9c asked for a new maze.
+2020.06.21 21:08:23.756 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:08:31.191 INFO  Model.MyModel - Client: Client.Client@948a259, asked for a solution
+2020.06.21 21:08:31.394 INFO  Model.MyModel - Client: Client.Client@e23de9a, asked for a solution
+2020.06.21 21:08:32.802 INFO  Model.MyModel - Client: Client.Client@68a5df89, asked for a solution
+2020.06.21 21:08:33.210 INFO  Model.MyModel - Client: Client.Client@6a2002dc, asked for a solution
+2020.06.21 21:08:34.924 INFO  Model.MyModel - Client: Client.Client@27fbb3ec, asked for a solution
+2020.06.21 21:08:36.894 INFO  Model.MyModel - Client: Client.Client@6f48d4cd, asked for a solution
+2020.06.21 21:08:37.443 INFO  Model.MyModel - Client: Client.Client@5b0c503d, asked for a solution
+2020.06.21 21:08:37.699 INFO  Model.MyModel - Client: Client.Client@53e7035f, asked for a solution
+2020.06.21 21:08:38.627 INFO  Model.MyModel - Client: Client.Client@50416e02, asked for a solution
+2020.06.21 21:11:38.211 INFO  Model.MyModel - Servers are up
+2020.06.21 21:11:41.319 INFO  Model.MyModel - Client: Client.Client@6894efca asked for a new maze.
+2020.06.21 21:11:41.340 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:11:43.256 INFO  Model.MyModel - Client: Client.Client@7035c645, asked for a solution
+2020.06.21 21:11:44.503 INFO  Model.MyModel - Client: Client.Client@6e324eda asked for a new maze.
+2020.06.21 21:11:44.508 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:11:50.693 INFO  Model.MyModel - Client: Client.Client@4141dbe1, asked for a solution
+2020.06.21 21:11:51.752 INFO  Model.MyModel - Client: Client.Client@41fa26b9, asked for a solution
+2020.06.21 21:11:51.941 INFO  Model.MyModel - Client: Client.Client@7f9f0bee, asked for a solution
+2020.06.21 21:11:52.128 INFO  Model.MyModel - Client: Client.Client@e0ed97d, asked for a solution
+2020.06.21 21:11:52.317 INFO  Model.MyModel - Client: Client.Client@35da9779, asked for a solution
+2020.06.21 21:11:52.564 INFO  Model.MyModel - Client: Client.Client@62aeb2f5, asked for a solution
+2020.06.21 21:11:52.755 INFO  Model.MyModel - Client: Client.Client@4dba4818, asked for a solution
+2020.06.21 21:11:52.880 INFO  Model.MyModel - Client: Client.Client@765bd5fd, asked for a solution
+2020.06.21 21:11:53.130 INFO  Model.MyModel - Client: Client.Client@5d23d933, asked for a solution
+2020.06.21 21:11:53.442 INFO  Model.MyModel - Client: Client.Client@74fbcef4, asked for a solution
+2020.06.21 21:11:53.630 INFO  Model.MyModel - Client: Client.Client@4375f7d8, asked for a solution
+2020.06.21 21:11:53.817 INFO  Model.MyModel - Client: Client.Client@62970b82, asked for a solution
+2020.06.21 21:11:54.003 INFO  Model.MyModel - Client: Client.Client@b4d4925, asked for a solution
+2020.06.21 21:11:54.191 INFO  Model.MyModel - Client: Client.Client@466f4bb1, asked for a solution
+2020.06.21 21:11:54.629 INFO  Model.MyModel - Client: Client.Client@8b188c0, asked for a solution
+2020.06.21 21:11:54.817 INFO  Model.MyModel - Client: Client.Client@174e4aec, asked for a solution
+2020.06.21 21:11:54.939 INFO  Model.MyModel - Client: Client.Client@2687ff16, asked for a solution
+2020.06.21 21:11:55.130 INFO  Model.MyModel - Client: Client.Client@50653ed3, asked for a solution
+2020.06.21 21:11:55.252 INFO  Model.MyModel - Client: Client.Client@198082e, asked for a solution
+2020.06.21 21:11:55.505 INFO  Model.MyModel - Client: Client.Client@1f50a97e, asked for a solution
+2020.06.21 21:11:56.194 INFO  Model.MyModel - Client: Client.Client@371dd28a, asked for a solution
+2020.06.21 21:11:56.377 INFO  Model.MyModel - Client: Client.Client@11f414e0, asked for a solution
+2020.06.21 21:11:58.692 INFO  Model.MyModel - Client: Client.Client@77ea25b2 asked for a new maze.
+2020.06.21 21:11:58.696 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:12:22.193 INFO  Model.MyModel - Client: Client.Client@592ecd13 asked for a new maze.
+2020.06.21 21:12:22.197 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:12:23.443 INFO  Model.MyModel - Client: Client.Client@64606c29, asked for a solution
+2020.06.21 21:12:25.629 INFO  Model.MyModel - Client: Client.Client@168fe4ab asked for a new maze.
+2020.06.21 21:12:25.632 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:17:44.607 INFO  Model.MyModel - Servers are up
+2020.06.21 21:17:47.734 INFO  Model.MyModel - Client: Client.Client@fb2cb5c asked for a new maze.
+2020.06.21 21:17:47.747 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:17:57.415 INFO  Model.MyModel - Client: Client.Client@51f0ba5b, asked for a solution
+2020.06.21 21:17:58.220 INFO  Model.MyModel - Client: Client.Client@9bc722c asked for a new maze.
+2020.06.21 21:17:58.249 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:18:04.476 INFO  Model.MyModel - Client: Client.Client@9dc964d, asked for a solution
+2020.06.21 21:24:21.891 INFO  Model.MyModel - Servers are up
+2020.06.21 21:24:24.883 INFO  Model.MyModel - Client: Client.Client@6ecd5210 asked for a new maze.
+2020.06.21 21:24:24.900 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:24:38.134 INFO  Model.MyModel - Servers are up
+2020.06.21 21:24:41.129 INFO  Model.MyModel - Client: Client.Client@5ab2304 asked for a new maze.
+2020.06.21 21:24:41.143 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:24:42.383 INFO  Model.MyModel - Client: Client.Client@5b4326b6, asked for a solution
+2020.06.21 21:24:49.130 INFO  Model.MyModel - Client: Client.Client@593055ee asked for a new maze.
+2020.06.21 21:24:49.134 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:24:55.879 INFO  Model.MyModel - Client: Client.Client@4af0b567, asked for a solution
+2020.06.21 21:24:57.131 INFO  Model.MyModel - Client: Client.Client@51004fcb, asked for a solution
+2020.06.21 21:24:57.378 INFO  Model.MyModel - Client: Client.Client@a10abfe, asked for a solution
+2020.06.21 21:24:57.565 INFO  Model.MyModel - Client: Client.Client@6891e523, asked for a solution
+2020.06.21 21:24:57.754 INFO  Model.MyModel - Client: Client.Client@1a246de1, asked for a solution
+2020.06.21 21:24:58.003 INFO  Model.MyModel - Client: Client.Client@6a0b6dbe, asked for a solution
+2020.06.21 21:24:58.087 INFO  Model.MyModel - Client: Client.Client@6862c3ee, asked for a solution
+2020.06.21 21:24:58.255 INFO  Model.MyModel - Client: Client.Client@5694ff7c, asked for a solution
+2020.06.21 21:24:58.441 INFO  Model.MyModel - Client: Client.Client@5caa737e, asked for a solution
+2020.06.21 21:24:59.942 INFO  Model.MyModel - Client: Client.Client@60d43b8e asked for a new maze.
+2020.06.21 21:24:59.946 INFO  Model.MyModel - Maze generated: 10 rows and 10 cols
+2020.06.21 21:25:03.692 INFO  Model.MyModel - Client: Client.Client@1b9011c2, asked for a solution
