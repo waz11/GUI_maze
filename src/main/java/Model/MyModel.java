@@ -99,6 +99,7 @@ public class MyModel extends Observable implements IModel {
                 }
             });
             LOG.info("Client: "+client.toString()+" asked for a new maze.");
+            solveMaze = false;
             client.communicateWithServer();
             setChanged();
             notifyObservers();

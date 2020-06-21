@@ -116,9 +116,9 @@ public class MyViewController implements Observer, IView {
                 btn_generateMaze.setDisable(true);
                 isGameOver = false;
                 showSolution = false;
+                mazeDisplayer.cancelSolution();
                 myViewModel.generateMaze(rows, cols);
                 btn_solveMaze.setDisable(false);
-                mazeDisplayer.newMaze();
                 mazeDisplayer.newMaze();
 
                 playMusic();
