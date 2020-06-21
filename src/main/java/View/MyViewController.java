@@ -114,6 +114,7 @@ public class MyViewController implements Observer, IView {
                 myViewModel.generateMaze(rows, cols);
                 btn_solveMaze.setDisable(false);
                 mazeDisplayer.newMaze();
+                mazeDisplayer.newMaze();
 
                 playMusic();
             }
@@ -133,7 +134,8 @@ public class MyViewController implements Observer, IView {
         }
         Media sound = new Media(new File(musicFile).toURI().toString());
         mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        if(musicFile.equals("resources/sound/audio.mp3"))
+            mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         mediaPlayer.play();
     }
 
@@ -278,20 +280,20 @@ public class MyViewController implements Observer, IView {
 
     // windows size:
     public void setResizeEvent(Scene scene) {
-        long width = 0;
-        long height = 0;
-        scene.widthProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
-                mazeDisplayer.redraw();
-            }
-        });
-        scene.heightProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
-                mazeDisplayer.redraw();
-            }
-        });
+        if (haveMaze){
+            scene.widthProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
+                    mazeDisplayer.redraw();
+                }
+            });
+            scene.heightProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneHeight, Number newSceneHeight) {
+                    mazeDisplayer.redraw();
+                }
+            });
+        }
     }
 
     //Zoom:

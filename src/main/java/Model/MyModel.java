@@ -21,6 +21,9 @@ import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class MyModel extends Observable implements IModel {
     private ExecutorService threadPool = Executors.newCachedThreadPool();
@@ -34,7 +37,7 @@ public class MyModel extends Observable implements IModel {
     private boolean isGameOver = false;
     private boolean solveMaze = false;
     private Maze maze;
-
+    private static final Logger LOG = LogManager.getLogger();
     Position startPosition;
     Position goalPosition;
 
@@ -46,11 +49,13 @@ public class MyModel extends Observable implements IModel {
     public void startServers() {
         severGenerate.start();
         serverSolve.start();
+        LOG.info("Servers are up");
     }
 
     public void stopServers() {
         severGenerate.stop();
         serverSolve.stop();
+        LOG.info("Servers are stopped");
     }
 
     public void exit(){
@@ -65,7 +70,7 @@ public class MyModel extends Observable implements IModel {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+
             }
             solveMaze = false;
             setChanged();
@@ -101,12 +106,17 @@ public class MyModel extends Observable implements IModel {
 
                         toServer.close();
                         fromServer.close();
+
+                        LOG.info("Maze generated: " + rows + " rows and " + cols + " cols");
                     } catch (Exception e) {
+                        LOG.error("Maze generation failed.");
                     }
                 }
             });
+            LOG.info("Client: "+client.toString()+" asked for a new maze.");
             client.communicateWithServer();
         } catch (UnknownHostException e) {
+            LOG.error("Maze generation failed.");
         }
 
         return maze;
@@ -118,7 +128,6 @@ public class MyModel extends Observable implements IModel {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
             }
             solveMaze = true;
             setChanged();
@@ -143,13 +152,16 @@ public class MyModel extends Observable implements IModel {
                         solution = (Solution) fromServer.readObject(); //read generated maze (compressed with MyCompressor) from server
 
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        LOG.error("Solving maze failed.");
                     }
                 }
             });
+
+            LOG.info("Client: "+client.toString() + ", asked for a solution");
             client.communicateWithServer();
+
         } catch (UnknownHostException e) {
-            e.printStackTrace();
+            LOG.error("Solving maze failed.");
         }
 
     }
@@ -283,7 +295,7 @@ public class MyModel extends Observable implements IModel {
             maze.setStart(start);
             maze.setGoal(goal);
         } catch (IOException ex) {
-            ex.printStackTrace();
+            LOG.error("Saving maze failed.");
         }
     }
 
@@ -313,8 +325,11 @@ public class MyModel extends Observable implements IModel {
             setChanged();
             notifyObservers();
         } catch (ClassNotFoundException e) {
+            LOG.error("Loading saved maze failed.");
         } catch (FileNotFoundException e) {
+            LOG.error("Loading saved maze failed.");
         } catch (IOException e) {
+            LOG.error("Loading saved maze failed.");
         }
 
     }
@@ -335,6 +350,8 @@ public class MyModel extends Observable implements IModel {
         properties.setProperty("threads", "5");
         properties.store(out, null);
 
+        LOG.info("Generated algorithm: "+generate);
+        LOG.info("Solving algorithm: "+solving);
         input.close();
         out.close();
 
