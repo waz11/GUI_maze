@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ded95cd-08b9-4368-ac02-4f1cf009a799" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/SavedMazes/maze_0" beforeDir="false" afterPath="$PROJECT_DIR$/SavedMazes/maze_0" afterDir="false" />
+    <list default="true" id="5ded95cd-08b9-4368-ac02-4f1cf009a799" name="Default Changelist" comment="sound adding">
+      <change beforePath="$PROJECT_DIR$/GUI_maze.iws" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_maze.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/MazeLog.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/MazeLog.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/MyView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MyView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/Options.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Options.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/View/Options.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Options.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +70,7 @@
       <workItem from="1592762800119" duration="299000" />
       <workItem from="1592763437657" duration="178000" />
       <workItem from="1592763666514" duration="255000" />
+      <workItem from="1592903044831" duration="2138000" />
     </task>
     <task id="LOCAL-00001" summary="sound adding">
       <created>1592651452034</created>
@@ -118,33 +126,33 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="313" y="52" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1366.728@0.0.1366.728" timestamp="1592734094022" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1592763179882">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1592903890634">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592763179882" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592903890634" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1592657061045">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592657061045" />
-    <state width="1323" height="172" key="GridCell.Tab.0.bottom" timestamp="1592763921449">
+    <state width="1323" height="172" key="GridCell.Tab.0.bottom" timestamp="1592904150296">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="172" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592763921449" />
+    <state width="1323" height="172" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592904150296" />
     <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592683057921" />
-    <state width="1323" height="172" key="GridCell.Tab.0.center" timestamp="1592763921449">
+    <state width="1323" height="172" key="GridCell.Tab.0.center" timestamp="1592904150296">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="172" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592763921449" />
+    <state width="1323" height="172" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592904150296" />
     <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592683057921" />
-    <state width="1323" height="172" key="GridCell.Tab.0.left" timestamp="1592763921448">
+    <state width="1323" height="172" key="GridCell.Tab.0.left" timestamp="1592904150296">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="172" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592763921448" />
+    <state width="1323" height="172" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592904150296" />
     <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592683057920" />
-    <state width="1323" height="172" key="GridCell.Tab.0.right" timestamp="1592763921449">
+    <state width="1323" height="172" key="GridCell.Tab.0.right" timestamp="1592904150296">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="172" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592763921449" />
+    <state width="1323" height="172" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592904150296" />
     <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592683057921" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1592763611982">
       <screen x="0" y="0" width="1366" height="728" />

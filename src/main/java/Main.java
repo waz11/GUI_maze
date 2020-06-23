@@ -50,6 +50,7 @@ public class Main extends Application {
                 if (result.get() == ButtonType.OK){
                     // ... user chose OK
                     // Close program
+
                 } else {
                     // ... user chose CANCEL or closed the dialog
                     windowEvent.consume();
@@ -62,3 +63,4 @@ public class Main extends Application {
         launch(args);
     }
 }
+

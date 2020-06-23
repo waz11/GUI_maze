@@ -28,6 +28,10 @@
                       <String fx:id="myMaze" fx:value="Random Maze" />
                   </FXCollections>
                </items>
+<!--                ron: if we want to show in the option window: -->
+<!--                <value>-->
+<!--                    <String fx:value="NVT" />-->
+<!--                </value>-->
             </ComboBox>
 <!--            <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />-->
              <ComboBox fx:id="solvingAlgo" layoutX="347.0" layoutY="50.0" onAction="#setPropreties" prefHeight="63.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
