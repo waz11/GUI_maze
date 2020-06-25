@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ded95cd-08b9-4368-ac02-4f1cf009a799" name="Default Changelist" comment="sound adding">
-      <change beforePath="$PROJECT_DIR$/GUI_maze.iws" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_maze.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/MazeLog.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/MazeLog.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MyView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MyView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/Options.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/Options.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/View/Options.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/View/Options.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="5ded95cd-08b9-4368-ac02-4f1cf009a799" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +11,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1dXNNIrvFaNvvQ5pq23xSriAtpJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -33,6 +25,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.09165901" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -70,7 +63,14 @@
       <workItem from="1592762800119" duration="299000" />
       <workItem from="1592763437657" duration="178000" />
       <workItem from="1592763666514" duration="255000" />
-      <workItem from="1592903044831" duration="2138000" />
+      <workItem from="1592909277734" duration="991000" />
+      <workItem from="1592910459478" duration="12000" />
+      <workItem from="1592945179395" duration="289000" />
+      <workItem from="1593008920255" duration="351000" />
+      <workItem from="1593009348471" duration="68000" />
+      <workItem from="1593011401109" duration="596000" />
+      <workItem from="1593012079087" duration="28000" />
+      <workItem from="1593012193642" duration="171000" />
     </task>
     <task id="LOCAL-00001" summary="sound adding">
       <created>1592651452034</created>
@@ -114,6 +114,9 @@
     <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
     <MESSAGE value="sound adding" />
     <option name="LAST_COMMIT_MESSAGE" value="sound adding" />
   </component>
@@ -126,38 +129,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="313" y="52" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1366.728@0.0.1366.728" timestamp="1592734094022" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1592903890634">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1592763179882">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592903890634" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592763179882" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1592657061045">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592657061045" />
-    <state width="1323" height="172" key="GridCell.Tab.0.bottom" timestamp="1592904150296">
+    <state width="1323" height="50" key="GridCell.Tab.0.bottom" timestamp="1593012365192">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="172" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592904150296" />
+    <state width="1323" height="50" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593012365192" />
     <state width="1877" height="179" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592683057921" />
-    <state width="1323" height="172" key="GridCell.Tab.0.center" timestamp="1592904150296">
+    <state width="1323" height="50" key="GridCell.Tab.0.center" timestamp="1593012365192">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="172" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592904150296" />
+    <state width="1323" height="50" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593012365192" />
     <state width="1877" height="179" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592683057921" />
-    <state width="1323" height="172" key="GridCell.Tab.0.left" timestamp="1592904150296">
+    <state width="1323" height="50" key="GridCell.Tab.0.left" timestamp="1593012365191">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="172" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592904150296" />
+    <state width="1323" height="50" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593012365191" />
     <state width="1877" height="179" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592683057920" />
-    <state width="1323" height="172" key="GridCell.Tab.0.right" timestamp="1592904150296">
+    <state width="1323" height="50" key="GridCell.Tab.0.right" timestamp="1593012365192">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="172" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592904150296" />
+    <state width="1323" height="50" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593012365192" />
     <state width="1877" height="179" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592683057921" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1592763611982">
+    <state x="163" y="0" key="SettingsEditor" timestamp="1592910471832">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592763611982" />
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592910471832" />
     <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1592763185044">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

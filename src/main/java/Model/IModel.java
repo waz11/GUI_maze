@@ -4,14 +4,10 @@ import algorithms.mazeGenerators.Maze;
 import algorithms.search.Solution;
 import javafx.event.ActionEvent;
 import javafx.scene.input.KeyCode;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-/**
- * Created by Aviadjo on 6/14/2017.
- */
 public interface IModel {
     Maze generateMaze(int width, int height);
     void solveMaze();
@@ -26,5 +22,5 @@ public interface IModel {
     public void setProperties(String generate, String solving) throws IOException;
     public void exit();
     public void hideSolution();
-
+    public String[] getInfo();
 }

@@ -41,8 +41,6 @@ public class Options {
             else
                 input_mazeGen = "MyMazeGenerator";
         }
-
-//        System.out.println(input_mazeGen + " "+input_searchAlgorithm );
         myViewModel.setProperties(input_mazeGen, input_searchAlgorithm);
     }
 

@@ -51,9 +51,6 @@
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
   </component>
-  <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
-  </component>
   <component name="libraryTable">
     <library name="Maven: org.apache.logging.log4j:log4j-api:2.9.1">
       <CLASSES>

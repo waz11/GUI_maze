@@ -9,11 +9,6 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.paint.Color;
-
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
@@ -41,7 +36,6 @@ public class MazeDisplayer extends Canvas {
 
     public void setMaze(Maze maze) {
         this.maze = maze;
-//        setSizes();
         redraw();
     }
 
@@ -62,7 +56,6 @@ public class MazeDisplayer extends Canvas {
         canvasWidth = getWidth();
         y = canvasHeight / maze.getRows();
         x = canvasWidth / maze.getCols();
-
     }
 
 
@@ -80,10 +73,6 @@ public class MazeDisplayer extends Canvas {
                 Position p = new Position(row, col);
                 if (maze.isWall(p))
                     gc.drawImage(wallImage, col * x, row * y, x, y);
-//                else{
-//                    gc.setFill(Color.BLUE);
-//                    gc.fillRect(col * x, row * y, x, y);
-//                }
             }
         }
     }
@@ -100,8 +89,7 @@ public class MazeDisplayer extends Canvas {
     private void drawGoal() {
         try {
             goalImage = new Image(new FileInputStream(ImageFileNameGoal.get()));
-        } catch (FileNotFoundException e) {
-        }
+        } catch (FileNotFoundException e) { }
         GraphicsContext gc = getGraphicsContext2D();
         gc.drawImage(goalImage, maze.getGoalPosition().getColumnIndex() * x, maze.getGoalPosition().getRowIndex() * y, x, y);
     }
@@ -109,8 +97,7 @@ public class MazeDisplayer extends Canvas {
     private void drawSolution(){
         try {
             solutionImg = new Image(new FileInputStream(imageFileNameSolution.get()));
-        } catch (FileNotFoundException e) {
-        }
+        } catch (FileNotFoundException e) { }
         GraphicsContext gc = getGraphicsContext2D();
         for (int i = 0; i < solution.getSolutionPath().size(); i++) {
             MazeState position = (MazeState) solution.getSolutionPath().get(i);
@@ -121,8 +108,6 @@ public class MazeDisplayer extends Canvas {
 
     public void showSolution(Solution sol) {
         solution = sol;
-        //redraw();
-        //drawSolution();
         showSolution = true;
     }
 
@@ -170,7 +155,6 @@ public class MazeDisplayer extends Canvas {
     public void setCharacterPosition(int row, int column) {
         characterPositionRow = row;
         characterPositionColumn = column;
-        //redraw();
     }
 
     public int getCharacterPositionRow() {

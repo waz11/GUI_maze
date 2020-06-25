@@ -12,7 +12,6 @@ import algorithms.search.AState;
 import algorithms.search.Solution;
 import javafx.scene.input.KeyCode;
 
-
 import java.io.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -316,10 +315,6 @@ public class MyModel extends Observable implements IModel {
     public void setProperties(String generate, String solving) throws IOException {
         File file = new File("resources/config.properties");
         Properties properties = new Properties();
-
-//        if(file.length() == 0)
-//            Server.Configurations.configurations();
-
         InputStream input = new FileInputStream("resources/config.properties");
         OutputStream out = new FileOutputStream("./resources/config.properties");
 
@@ -338,6 +333,27 @@ public class MyModel extends Observable implements IModel {
 
     public void hideSolution(){
         this.solveMaze = false;
+    }
+
+    public String[] getInfo(){
+        Properties properties = new Properties();
+        InputStream input = null;
+        String[] ans = new String[2];
+        ans[1] = "BestFirstSearch";
+        ans[0] = "MyMazeGenerator";
+        try {
+            input = new FileInputStream("resources/config.properties");
+            properties.load(input);
+            ans= new String[2];
+            ans[1] = properties.getProperty("searchAlgorithm");
+            ans[0] = properties.getProperty("generator");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return ans;
     }
 }
 

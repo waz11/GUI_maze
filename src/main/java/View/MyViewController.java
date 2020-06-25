@@ -66,6 +66,9 @@ public class MyViewController implements Observer, IView {
     private static final Logger LOG = LogManager.getLogger();
     private MediaPlayer mediaPlayer;
 
+    public javafx.scene.control.Label info_generate;
+    public javafx.scene.control.Label info_solving;
+
     public void setMyViewModel(MyViewModel myViewModel) {
         this.myViewModel = myViewModel;
     }
@@ -120,7 +123,9 @@ public class MyViewController implements Observer, IView {
                 myViewModel.generateMaze(rows, cols);
                 btn_solveMaze.setDisable(false);
                 mazeDisplayer.newMaze();
-
+                String[] info = myViewModel.getInfo();
+                info_generate.setText(info[0]);
+                info_solving.setText(info[1]);
                 playMusic();
             }
         } catch (Exception e) {
@@ -347,9 +352,5 @@ public class MyViewController implements Observer, IView {
         Platform.exit();
 
     }
-
-
-    //options:
-
 
 }

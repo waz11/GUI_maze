@@ -62,9 +62,7 @@ public class MyViewModel extends Observable implements Observer {
 
     public void updatePlayerPosition(){
         characterPositionRowIndex = model.getPlayer_row();
-        //characterPositionRow.set(characterPositionRowIndex + "");
         characterPositionColumnIndex = model.getPlayer_col();
-        //characterPositionColumn.set(characterPositionColumnIndex + "");
         isGameOver = model.isGameOver();
     }
 
@@ -122,5 +120,9 @@ public class MyViewModel extends Observable implements Observer {
 
     public void exit(){
         model.exit();
+    }
+
+    public String[] getInfo() {
+        return model.getInfo();
     }
 }
